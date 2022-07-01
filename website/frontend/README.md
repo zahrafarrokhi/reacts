@@ -10,7 +10,12 @@ npm run dev
 [mui](https://mui.com/material-ui/getting-started/installation/)
 ```jsx
 cd frontend 
-npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @emotion/react @emotion/styled @emotion/server
+
+* @emotion/cache
+* @emotion/react
+* @emotion/server
+* @emotion/styled
 ```
 #### How to use Material-UI with Next.js ?
 [material-ui-with-next-js](https://www.geeksforgeeks.org/how-to-use-material-ui-with-next-js/)
