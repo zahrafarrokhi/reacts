@@ -123,3 +123,36 @@ npm run dev
 
 out => Welcome to Next.js! integrated with Material-UI!
 ```
+#### eslint config
+```jsx
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"extends": [
+		"eslint:recommended", "plugin:react/recommended", "next",
+		"next/core-web-vitals", "airbnb"
+	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react"
+	],
+	"rules": {
+		"react/react-in-jsx-scopre": "off"
+	}
+}
+
+
+```
