@@ -279,3 +279,11 @@ module.exports = nextConfig
 // Done! (with install mui)
 
 ```
+
+##### globals.scss
+```jsx
+#__next {
+  height: 100%;
+  width: 100vw;
+}
+```
