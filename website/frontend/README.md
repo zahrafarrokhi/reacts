@@ -201,3 +201,45 @@ export default function Home() {
 }
 
 ```
+
+##### add fonts
+```jsx
+1_puplic/fonts
+2_styles/_fonts.scss
+3_styles/globals.scss
+@import "fonts";
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  font-family: "IRANSansMobile" !important;
+  @screen md {
+    font-family: "IRANSans" !important;
+  }
+}
+```
+```jsx
+4_
+// tailwind.config.js
+ extend: {
+      fontFamily: {
+        iranSansWeb: 'iranSansWeb',
+        iranSansMobile: 'iranSansMobile',
+        iranSansLight: 'iranSansLight',
+        iranSansBold: 'iranSansBold',
+        hack: 'HACK',
+        hackwin: 'HACKWIN',
+        anonymice: 'anonymice',
+        anonymiceWin: 'anonymice-win',
+      },}
+```
+```jsx
+// test
+//index.js
+<h1 className="text-3xl font-bold underline bg-secondary font-['hackwin']">
+                   Hello world!
+</h1>
+
+```
