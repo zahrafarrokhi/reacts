@@ -21,6 +21,7 @@ npm install @mui/material @emotion/react @emotion/styled @emotion/server @emotio
 ```
 #### How to use Material-UI with Next.js ?
 [material-ui-with-next-js](https://www.geeksforgeeks.org/how-to-use-material-ui-with-next-js/)
+[Next.Js + MUI v5 tutorial](https://dev.to/hajhosein/nextjs-mui-v5-tutorial-2k35)
 
 ##### Step 1: Create a custom file /pages/_document.js 
 ##### Step 2: Create an lib folder, add theme.js and createEmotionCache.js 
