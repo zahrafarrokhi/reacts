@@ -156,3 +156,48 @@ out => Welcome to Next.js! integrated with Material-UI!
 
 
 ```
+
+#### Install Tailwind CSS with Next.js
+[Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs)
+```jsx
+// install
+npm install -D tailwindcss postcss autoprefixer
+// create postcss.config.js
+npx tailwindcss init -p
+```
+###### tailwind.config.js
+```jsx
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+###### Add the Tailwind directives to your CSS
+```jsx
+// globals.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+```
+
+###### Start using Tailwind in your project
+```jsx
+// index.js
+export default function Home() {
+  return (
+ <h1 className="text-3xl font-bold underline ">
+                   Hello world!
+  </h1>
+  )
+}
+
+```

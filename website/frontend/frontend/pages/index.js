@@ -20,7 +20,9 @@ export default function Home() {
                     <code className={styles.code}>
                         pages/index.js</code>
                 </p>
-  
+                <h1 className="text-3xl font-bold underline bg-secondary">
+                   Hello world!
+                </h1>
             </main>
         </div>
     );
