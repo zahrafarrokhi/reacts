@@ -241,5 +241,8 @@ body {
 <h1 className="text-3xl font-bold underline bg-secondary font-['hackwin']">
                    Hello world!
 </h1>
-
+// console.log
+.font-\[\'hackwin\'\] {
+    font-family: 'hackwin';
+}
 ```
