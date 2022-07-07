@@ -366,9 +366,16 @@ export default function MyApp({ Component, pageProps }) {
 ```
 `index.js`
 ```jsx
-//getLayout(L) = 
-// Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
-Home.getLayout = (page) => (<LoginLayout backlink> {page}</LoginLayout>);
+import Head from "next/head";
+import LoginLayout from "../components/LoginLayout";
+
+export default function Home() {
+  return <div>layout</div>;
+}
+
+//getLayout
+Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
+
 ```
 
 `components/LoginLayout.jsx`
