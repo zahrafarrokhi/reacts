@@ -506,3 +506,55 @@ export const persianToEnglishDigits = (digit) => String(digit)
 
 ```
 ![login](./screenshots/login.png)
+
+#### confirm
+###### VerificationInput
+```jsx
+// state
+const [code, setCode] = useState("");
+// 
+npm i react-verification-input
+//
+const CODE_LENGTH = 4;
+//
+ <VerificationInput
+            length={CODE_LENGTH}
+            placeholder=""
+            validChars="0-9۰-۹"
+            onChange={() =>{}}
+            removeDefaultStyles
+            autoFocus
+            dir="ltr"
+            classNames={{
+              container: `flex flex-row justify-center h-[45px] w-[200px] md:w-[260px] md:h-[50px]`,
+              character: `flex justify-center items-center rounded-lg m-1 border border-border border-solid `,
+              characterInactive: `rounded-lg m-1 border border-border `,
+              characterSelected: `rounded-lg m-1 border border-borderColor  `,
+            }}
+          />
+        </div>
+```
+##### timer
+```jsx
+//state
+const timerRef = useRef(null);
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    const timerInterval = setInterval(() => {
+      if (time > 0) setTime((t) => (t > 0 ? t - 1 : t));
+      else clearInterval(timerRef.current);
+    }, 1000);
+    timerRef.current = timerInterval;
+  };
+
+  useEffect(() => {
+    startTimer();
+    // unmount
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
+
+
+```
