@@ -19,7 +19,11 @@ const LoginLayout = (props) => {
       <div className="flex flex-col w-[80%] h-[33rem]  bg-white drop-shadow-lg rounded-[16px] border-[#f4f5f8] absolute top-[15%] left-[5%] right-[5%] md:relative md:top-[0] md:left-0 md:right-0">
         {/* absolute mobile =>  top-[10px] left-[10px], desktop =>md:top-[20px] md:left-[20px] */}
         <ArrowBackRoundedIcon
-          className={backlink ? "text-[18px] md:text-[20px] fill-darkgray  absolute  top-[10px] left-[10px] md:top-[20px] md:left-[20px]" : "hidden"}
+          className={
+            backlink
+              ? "text-[18px] md:text-[20px] fill-darkgray  absolute  top-[10px] left-[10px] md:top-[20px] md:left-[20px]"
+              : "hidden"
+          }
           onClick={() => router.back()}
         />
         {children}
