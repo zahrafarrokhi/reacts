@@ -11,7 +11,7 @@ const EXP_TIME = 120;
 const Confirm = () => {
   //VerificationInput(CODE_LENGTH,setCode)
   const [code, setCode] = useState("");
-  //
+  // timer (setInterval)
   const [time, setTime] = useState(EXP_TIME);
   const timerRef = useRef(null);
 
@@ -31,6 +31,8 @@ const Confirm = () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
+
+
   return (
     <div className="flex flex-col grow mt-20">
       {/* 1 */}
@@ -69,7 +71,7 @@ const Confirm = () => {
           />
         </div>
 
-        {/*  */}
+        {/* btn & timer  */}
         <div className="flex flex-col mb-12">
           <Button
             variant="contained"
