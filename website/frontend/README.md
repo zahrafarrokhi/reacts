@@ -461,8 +461,18 @@ import { Button } from "@mui/material";
         </Button>
  </div>
  // add bg-primary to className  or lib/theme.js define primary
-
+//tailwind.config.js
+//  corePlugins: { 
+  //    preflight: false, 
+  //  },
 
 ```
 ##### point (btn)
-` add bg-primary or lib/theme.js define primary`
+[point](https://tailwindcss.com/docs/preflight)
+```jsx
+1. add bg-primary or lib/theme.js define primary
+//tailwind.config.js
+2.  corePlugins: { 
+     preflight: false, 
+   },
+```

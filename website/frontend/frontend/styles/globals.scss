@@ -1,7 +1,9 @@
 @import "fonts";
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 
 html,
 body {
