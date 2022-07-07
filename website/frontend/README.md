@@ -428,4 +428,9 @@ Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
        
 
 ```
-
+### add router link
+```jsx
+1-import { useRouter } from "next/dist/client/router";
+2-const router = useRouter();
+3- <ArrowBackRoundedIcon  className={backlink ? "" : "hidden"}  onClick={() => router.back()} />
+```
