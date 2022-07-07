@@ -4,19 +4,18 @@ import { useTheme } from "@mui/material/styles";
 import { persianToEnglishDigits, preventLettersTyping } from "../../lib/utils";
 
 import {
-  ButtonGroup,
   TextField,
   Button,
   InputLabel,
   FormHelperText,
-  Box,
   ToggleButtonGroup,
   ToggleButton,
 } from "@mui/material";
 
 const Login = (props) => {
-  // state
+  // ToggleButtonGroup,ToggleButton
   const [state, setState] = useState("email");
+  // TextField
   const [value, setValue] = useState();
   const theme = useTheme();
 
@@ -35,10 +34,9 @@ const Login = (props) => {
             height: "40px",
             padding: "5px",
             display: "flex",
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            bordderColor: 'gray',
-            // fontSize:'20px',
+            borderWidth: "1px",
+            borderStyle: "solid",
+            bordderColor: "gray",
             // backgroundColor: theme.palette.secondary.main,
             color: theme.palette.secondary.main,
             borderRadius: "10px",
@@ -53,7 +51,6 @@ const Login = (props) => {
           onChange={(e) => setState(e.target.value)}
           value={state}
         >
-        
           <ToggleButton
             sx={{
               flex: "1 0 45%",
@@ -61,10 +58,8 @@ const Login = (props) => {
               borderWidth: 0,
               fontSize: "20px",
               padding: "20px",
-            
-              
             }}
-             //  onChange={() => ({})}
+            //  onChange={() => ({})}
             value={"phonenumber"}
           >
             تلفن همراه
@@ -78,12 +73,10 @@ const Login = (props) => {
               padding: "20px",
               // borderTopWidth: "10px",
               // borderBottomWidth: "10px",
-             
             }}
             //  onChange={() => ({})}
             value={"email"}
           >
-            {" "}
             ایمیل
           </ToggleButton>
         </ToggleButtonGroup>
@@ -97,10 +90,6 @@ const Login = (props) => {
               sx={{
                 fontSize: "18px",
                 // color: theme.palette.textBlack.main,
-                // width: 1,
-                // textAlign: "right",
-                // marginBottom: 1 / 2,
-                // paddingRight: 0.4,
               }}
             >
               {state === "phonenumber" ? "تلفن همراه" : "ایمیل"}
@@ -153,7 +142,6 @@ const Login = (props) => {
     </div>
   );
 };
-
 
 // layout without return
 Login.getLayout = (page) => (
