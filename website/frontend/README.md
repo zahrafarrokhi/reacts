@@ -437,6 +437,7 @@ Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
 
 ### button (mui)
 ```jsx
+import { Button } from "@mui/material";
 //1
 //w-full sm:w-auto
   <div className="w-full sm:w-auto">
@@ -452,11 +453,16 @@ Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
   <div className="flex flex-col mb-12">
         <Button
           variant="contained"
-          className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-[15px]"
+          className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-[15px] bg-primary"
           color="primary"
           onClick={submit}
         >
           مرحله‌ بعد
         </Button>
-</div>
+ </div>
+ // add bg-primary to className  or lib/theme.js define primary
+
+
 ```
+##### point (btn)
+` add bg-primary or lib/theme.js define primary`
