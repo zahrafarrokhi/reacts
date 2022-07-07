@@ -11,7 +11,7 @@ const EXP_TIME = 120;
 const Confirm = () => {
   //VerificationInput(CODE_LENGTH,setCode)
   const [code, setCode] = useState("");
-  // 
+  //
   const [time, setTime] = useState(EXP_TIME);
   const timerRef = useRef(null);
 
@@ -92,7 +92,11 @@ const Confirm = () => {
             </div>
             <div className="flex items-center ">
               <GrRefresh className="w-[25px] h-[25px] p-[5px]" />
+              {/* 90/60 = 1.5 => floor(1.5) -> 1 =>str(1)=>'1 */}
+              {/* '1'.padStart(2, '0') = '01' */}
               {String(Math.floor(time / 60)).padStart(2, "0")}:
+              {/*90 %60 =>30 =>'30' =>   */}
+              {/* 01:30*/}
               {String(time % 60).padStart(2, "0")}
             </div>
           </div>
