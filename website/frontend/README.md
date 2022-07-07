@@ -349,3 +349,55 @@ const nextConfig = {
 module.exports = nextConfig;
 
 ```
+
+#### layout
+`pages/_app.js`
+
+[layout nextjs](https://nextjs.org/docs/basic-features/layouts#per-page-layouts)
+
+```jsx
+export default function MyApp({ Component, pageProps }) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page)
+
+  return getLayout(<Component {...pageProps} />)
+}
+
+```
+`index.js`
+```jsx
+//getLayout(L) = 
+// Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
+Home.getLayout = (page) => (<LoginLayout backlink> {page}</LoginLayout>);
+```
+
+`components/LoginLayout.jsx`
+
+```jsx
+//flex
+//imrc
+import React from 'react';
+//sfc
+const LoginLayout = (props) => {
+  const { children } = props;
+  return ( 
+// flex flex-col w(center) => items-center 
+// flex flex-col h(center) => justify-center dosent work then => h-full justify-center
+//min-h-screen	=> min-height: 100vh;
+//overflow-y-auto overflow-x-hidden
+//bg-background
+    <div className="flex flex-col items-center  h-full justify-center min-h-screen  overflow-y-auto overflow-x-hidden bg-background  ">
+   {/* // flex flex-col  w-[80%] h-[33rem] or h-auto desktop relative mobile absoulte*/}
+
+      <div className="flex flex-col w-[80%] h-[33rem]  bg-white drop-shadow-lg rounded-[16px] border-[#f4f5f8] absolute top-[15%] left-[5%] right-[5%] md:relative md:top-[0] md:left-0 md:right-0">
+       {children}
+      </div>
+   </div>    
+   );
+}
+ 
+export default LoginLayout;
+
+
+
+```
