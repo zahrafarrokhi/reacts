@@ -25,7 +25,7 @@ const Login = (props) => {
     if (e.key === "Enter") submit();
   };
   return (
-    <div className="flex flex-col items-center justify-center relative">
+    <div className="flex flex-col items-center justify-center relative h-full">
       <div className="flex align-items-center justify-content-center p-4">
         <ToggleButtonGroup
           variant="outlined"
@@ -54,6 +54,7 @@ const Login = (props) => {
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px",
+              borderWidth:0,
             }}
             value={"phonenumber"}
           >
@@ -63,6 +64,7 @@ const Login = (props) => {
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px",
+              borderWidth:0,
             }}
             //  onChange={() => ({})}
             value={"email"}
@@ -74,7 +76,7 @@ const Login = (props) => {
       </div>
 
       <div className="flex flex-row justify-around">
-        <div className="flex flex-col items-center p-5  w-100 ">
+        <div className="flex flex-col items-center py-5  w-full ">
           <div className="items-right">
             <InputLabel
               htmlFor="loginInput"
