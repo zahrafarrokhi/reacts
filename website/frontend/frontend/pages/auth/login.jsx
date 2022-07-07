@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LoginLayout from "../../components/LoginLayout";
 import { useTheme } from "@mui/material/styles";
+import { persianToEnglishDigits, preventLettersTyping } from '../../lib/utils';
 
 import {
   ButtonGroup,
@@ -12,65 +13,93 @@ import {
 } from "@mui/material";
 
 const Login = (props) => {
-    // state
-    const [state, setState] = useState("email");
-    const [value, setValue] = useState();
+  // state
+  const [state, setState] = useState("email");
+  const [value, setValue] = useState();
   const theme = useTheme();
 
-  const submit = async () => {};
 
+
+  const submit = async () => {};
+  const handleSubmitWithEnter = (e) => {
+    if (e.key === 'Enter') submit();
+  };
   return (
     <div className="flex flex-col items-center justify-center relative">
       <div className="flex align-items-center justify-content-center p-4">
         <ButtonGroup
-           variant="outlined"
-           sx={{
-             width: '100%',
-             display: 'flex',
-             justifyContent: 'space-between',
-             alignItems: 'center',
-             padding: '.4em 1.5em .37em 1.5em',
-             [theme.breakpoints.up('md')]: {
-               padding: '0em',
-               border: 0.5,
-               borderRadius: 2,
-               borderColor: theme.palette.secondary.main,
-             },
-           }}
-      
-        
+          variant="outlined"
+          sx={{
+            width: "240px",
+            height: "40px",
+            padding: "5px",
+            display: "flex",
+            backgroundColor: theme.palette.secondary.main,
+            color: theme.palette.secondary.main,
+            borderRadius: "10px",
+            overflow: "hidden",
+            borderColor: theme.palette.secondary.main,
+            [theme.breakpoints.up("md")]: {
+              width: " 327px",
+              height: "50px",
+              padding: "0px",
+            },
+          }}
+          onChange={(e) => setState(e.target.value)}
         >
-          
-          <Button>تلفن همراه</Button>
-          <Button> ایمیل</Button>
+          <Button
+          checked={state === "phonenumber"}
+          // onChange={() => ({})}
+          value={"phonenumber"}
+          >تلفن همراه</Button>
+          <Button
+           checked={state === "email"}
+          //  onChange={() => ({})}
+           value={"email"}
+          > ایمیل</Button>
         </ButtonGroup>
       </div>
 
-      <div className="flex flex-col items-center  justify-center w-full  my-4 sm:my-0">
-
-      <InputLabel
-          htmlFor="loginInput"
-          sx={{
-            color: theme.palette.textBlack.main,
-            width: 1,
-            textAlign: 'right',
-            marginBottom: 1 / 2,
-            paddingRight: 0.4,
-          }}
-        >
-          {/* {loginState === PHONE ? 'تلفن همراه' : 'ایمیل'} */}
-          kkk
-        </InputLabel>
-
-        <TextField
-          dir="ltr"
-          required
-          id="loginInput"
-          autoFocus
-          className="w-full sm:w-auto"
-          // error={err}
-          variant="outlined"
-         />
+      <div className="flex flex-row justify-around">
+        <div className="flex flex-col items-center p-5  w-100 ">
+          <div className="items-right">
+            <InputLabel
+              htmlFor="loginInput"
+              sx={{
+                color: theme.palette.textBlack.main,
+                width: 1,
+                textAlign: "right",
+                marginBottom: 1 / 2,
+                paddingRight: 0.4,
+              }}
+            >
+              {state === "phonenumber" ? "تلفن همراه" : "ایمیل"}
+            </InputLabel>
+            <TextField
+              dir="ltr"
+              required
+              id="loginInput"
+              autoFocus
+              className="w-full sm:w-auto"
+              // error={err}
+              variant="outlined"
+              value={value}
+              // onChange={(e) => setValue(e.target.value)}
+              onChange={()=>setValue(state === "phonenumber"? preventLettersTyping(persianToEnglishDigits(e.target.value)) : (e.target.value))}
+              inputProps={{
+                maxLength: state === "phonenumber" ? 11 : undefined,
+                inputMode: state === "phonenumber" ? "numeric" : "email"
+              }}
+              inputMode={state === "phonenumber" ? "numeric" : "email"}
+              placeholder={
+                state === "phonenumber" ? "09*********" : "email@example.com"
+              }
+              onKeyDown={(e) => handleSubmitWithEnter(e)}
+              sx={{ width: '100%' }}
+            />
+        
+          </div>
+        </div>
       </div>
 
       {/* btn */}
