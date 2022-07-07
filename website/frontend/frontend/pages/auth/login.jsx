@@ -25,8 +25,8 @@ const Login = (props) => {
     if (e.key === "Enter") submit();
   };
   return (
-    <div className="flex flex-col items-center justify-center relative h-full">
-      <div className="flex align-items-center justify-content-center p-4">
+    <div className="flex flex-col items-center justify-center  relativ -top-[20rem] h-full">
+      <div className="flex align-items-center justify-content-center ">
         <ToggleButtonGroup
           variant="outlined"
           color="secondary"
@@ -35,8 +35,12 @@ const Login = (props) => {
             height: "40px",
             padding: "5px",
             display: "flex",
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            bordderColor: 'gray',
+            fontSize:'20px',
             // backgroundColor: theme.palette.secondary.main,
-            // color: theme.palette.secondary.main,
+            color: theme.palette.secondary.main,
             borderRadius: "10px",
             overflow: "hidden",
             // borderColor: theme.palette.secondary.main,
@@ -56,6 +60,7 @@ const Login = (props) => {
               borderRadius: "10px",
               borderWidth:0,
             }}
+             //  onChange={() => ({})}
             value={"phonenumber"}
           >
             تلفن همراه
