@@ -435,6 +435,7 @@ Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
 3- <ArrowBackRoundedIcon  className={backlink ? "" : "hidden"}  onClick={() => router.back()} />
 ```
 ### login
+`http://localhost:3000/auth/login`
 ###### state
 ```jsx
 //state
