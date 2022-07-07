@@ -413,6 +413,19 @@ export default LoginLayout;
 ### add back icons to layout
 
 ```jsx
-
+1- npm i react-icons
+2- npm i @mui/icons-material
+3- import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+4- const { children, backlink } = props;
+5-  <ArrowBackRoundedIcon  className={backlink ? "" : "hidden"}  />
+6- Utilities for styling the fill of SVG elements.=> fill-darkgray
+7- 
+//index.js
+//props => backlink
+//getLayout
+Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;         
+         
+       
 
 ```
+
