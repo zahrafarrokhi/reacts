@@ -376,7 +376,7 @@ export default function Home() {
 }
 
 //getLayout
-Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
+Home.getLayout = (page) => <LoginLayout > {page}</LoginLayout>;
 
 ```
 
@@ -409,3 +409,10 @@ export default LoginLayout;
 
 ```
 ![layout](./screenshots/Layout.png)
+
+### add back icons to layout
+
+```jsx
+
+
+```
