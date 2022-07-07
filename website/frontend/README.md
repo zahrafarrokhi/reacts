@@ -370,7 +370,9 @@ import Head from "next/head";
 import LoginLayout from "../components/LoginLayout";
 
 export default function Home() {
-  return <div>layout</div>;
+  return <div className="flex flex-col items-center  h-full justify-center">
+    <h1>Layout</h1>
+  </div>;
 }
 
 //getLayout
