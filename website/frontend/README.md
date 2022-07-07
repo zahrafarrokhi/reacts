@@ -434,7 +434,15 @@ Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
 2-const router = useRouter();
 3- <ArrowBackRoundedIcon  className={backlink ? "" : "hidden"}  onClick={() => router.back()} />
 ```
-
+### login
+###### state
+```jsx
+//state
+ // ToggleButtonGroup,ToggleButton,InputLabel
+  const [state, setState] = useState("email");
+  // TextField
+  const [value, setValue] = useState();
+```
 ### button (mui)
 ```jsx
 import { Button } from "@mui/material";
@@ -475,4 +483,24 @@ import { Button } from "@mui/material";
 2.  corePlugins: { 
      preflight: false, 
    },
+```
+
+###### mui (login page)
+```jsx
+ToggleButtonGroup,
+ToggleButton,
+InputLabel
+TextField
+```
+
+#### utils (login page)
+```jsx
+// Whatever was not a number ([^\d]), replace it with an empty string.
+export const preventLettersTyping = (x) => x.replace(/[^\d]/g, '')
+// arabic & persion
+export const persianToEnglishDigits = (digit) => String(digit)
+  .replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d))
+  .replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+
+
 ```
