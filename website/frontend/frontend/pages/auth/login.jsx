@@ -25,7 +25,7 @@ const Login = (props) => {
     if (e.key === "Enter") submit();
   };
   return (
-    <div className="flex flex-col items-center justify-center  relativ -top-[20rem] h-full">
+    <div className="flex flex-col items-center justify-center  relative -top-[10px] h-full">
       <div className="flex align-items-center justify-content-center ">
         <ToggleButtonGroup
           variant="outlined"
@@ -38,7 +38,7 @@ const Login = (props) => {
             borderWidth: '1px',
             borderStyle: 'solid',
             bordderColor: 'gray',
-            fontSize:'20px',
+            // fontSize:'20px',
             // backgroundColor: theme.palette.secondary.main,
             color: theme.palette.secondary.main,
             borderRadius: "10px",
@@ -47,7 +47,7 @@ const Login = (props) => {
             [theme.breakpoints.up("md")]: {
               width: " 327px",
               height: "50px",
-              padding: "0px",
+              padding: "5px",
             },
           }}
           onChange={(e) => setState(e.target.value)}
@@ -58,7 +58,11 @@ const Login = (props) => {
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px",
-              borderWidth:0,
+              borderWidth: 0,
+              fontSize: "20px",
+              padding: "20px",
+            
+              
             }}
              //  onChange={() => ({})}
             value={"phonenumber"}
@@ -69,7 +73,12 @@ const Login = (props) => {
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px",
-              borderWidth:0,
+              borderWidth: 0,
+              fontSize: "20px",
+              padding: "20px",
+              // borderTopWidth: "10px",
+              // borderBottomWidth: "10px",
+             
             }}
             //  onChange={() => ({})}
             value={"email"}
@@ -80,17 +89,18 @@ const Login = (props) => {
         </ToggleButtonGroup>
       </div>
 
-      <div className="flex flex-row justify-around">
+      <div className="flex flex-row justify-around my-[80px]">
         <div className="flex flex-col items-center py-5  w-full ">
           <div className="items-right">
             <InputLabel
               htmlFor="loginInput"
               sx={{
-                color: theme.palette.textBlack.main,
-                width: 1,
-                textAlign: "right",
-                marginBottom: 1 / 2,
-                paddingRight: 0.4,
+                fontSize: "18px",
+                // color: theme.palette.textBlack.main,
+                // width: 1,
+                // textAlign: "right",
+                // marginBottom: 1 / 2,
+                // paddingRight: 0.4,
               }}
             >
               {state === "phonenumber" ? "تلفن همراه" : "ایمیل"}
@@ -130,7 +140,7 @@ const Login = (props) => {
       </div>
 
       {/* btn */}
-      <div className="flex flex-col mb-12">
+      <div className="flex flex-col mb-[20px] ">
         <Button
           variant="contained"
           className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-lg "
