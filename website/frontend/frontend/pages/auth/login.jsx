@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LoginLayout from "../../components/LoginLayout";
 import { useTheme } from "@mui/material/styles";
-import { persianToEnglishDigits, preventLettersTyping } from '../../lib/utils';
+import { persianToEnglishDigits, preventLettersTyping } from "../../lib/utils";
 
 import {
   ButtonGroup,
@@ -10,6 +10,8 @@ import {
   InputLabel,
   FormHelperText,
   Box,
+  ToggleButtonGroup,
+  ToggleButton,
 } from "@mui/material";
 
 const Login = (props) => {
@@ -18,27 +20,26 @@ const Login = (props) => {
   const [value, setValue] = useState();
   const theme = useTheme();
 
-
-
   const submit = async () => {};
   const handleSubmitWithEnter = (e) => {
-    if (e.key === 'Enter') submit();
+    if (e.key === "Enter") submit();
   };
   return (
     <div className="flex flex-col items-center justify-center relative">
       <div className="flex align-items-center justify-content-center p-4">
-        <ButtonGroup
+        <ToggleButtonGroup
           variant="outlined"
+          color="secondary"
           sx={{
             width: "240px",
             height: "40px",
             padding: "5px",
             display: "flex",
-            backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.secondary.main,
+            // backgroundColor: theme.palette.secondary.main,
+            // color: theme.palette.secondary.main,
             borderRadius: "10px",
             overflow: "hidden",
-            borderColor: theme.palette.secondary.main,
+            // borderColor: theme.palette.secondary.main,
             [theme.breakpoints.up("md")]: {
               width: " 327px",
               height: "50px",
@@ -46,18 +47,30 @@ const Login = (props) => {
             },
           }}
           onChange={(e) => setState(e.target.value)}
+          value={state}
         >
-          <Button
-          checked={state === "phonenumber"}
-          // onChange={() => ({})}
-          value={"phonenumber"}
-          >تلفن همراه</Button>
-          <Button
-           checked={state === "email"}
-          //  onChange={() => ({})}
-           value={"email"}
-          > ایمیل</Button>
-        </ButtonGroup>
+        
+          <ToggleButton
+            sx={{
+              flex: "1 0 45%",
+              borderRadius: "10px",
+            }}
+            value={"phonenumber"}
+          >
+            تلفن همراه
+          </ToggleButton>
+          <ToggleButton
+            sx={{
+              flex: "1 0 45%",
+              borderRadius: "10px",
+            }}
+            //  onChange={() => ({})}
+            value={"email"}
+          >
+            {" "}
+            ایمیل
+          </ToggleButton>
+        </ToggleButtonGroup>
       </div>
 
       <div className="flex flex-row justify-around">
@@ -85,19 +98,26 @@ const Login = (props) => {
               variant="outlined"
               value={value}
               // onChange={(e) => setValue(e.target.value)}
-              onChange={()=>setValue(state === "phonenumber"? preventLettersTyping(persianToEnglishDigits(e.target.value)) : (e.target.value))}
+              onChange={() =>
+                setValue(
+                  state === "phonenumber"
+                    ? preventLettersTyping(
+                        persianToEnglishDigits(e.target.value)
+                      )
+                    : e.target.value
+                )
+              }
               inputProps={{
                 maxLength: state === "phonenumber" ? 11 : undefined,
-                inputMode: state === "phonenumber" ? "numeric" : "email"
+                inputMode: state === "phonenumber" ? "numeric" : "email",
               }}
               inputMode={state === "phonenumber" ? "numeric" : "email"}
               placeholder={
                 state === "phonenumber" ? "09*********" : "email@example.com"
               }
               onKeyDown={(e) => handleSubmitWithEnter(e)}
-              sx={{ width: '100%' }}
+              sx={{ width: "100%" }}
             />
-        
           </div>
         </div>
       </div>
