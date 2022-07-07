@@ -42,7 +42,7 @@ const Confirm = () => {
         >
           لطفا کد ارسال شده به شماره
         </div>
-        <div className={`flex flex-row text-primary font-semibold `}>{525}</div>
+        <div className={`flex flex-row text-primary font-semibold `}>{9122222277}</div>
         <div
           className={`flex flex-row  text-black font-bold text-sm text-center`}
         >

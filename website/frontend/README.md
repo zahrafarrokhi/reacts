@@ -608,3 +608,5 @@ setState(getNewValue)
       {String(time % 60).padStart(2, "0")}
   </div>
 ```
+
+![confirm](./screenshots/confirm.png)
