@@ -50,9 +50,9 @@ const Confirm = () => {
         </div>
       </div>
       {/* VerificationInput */}
-      <div className={`flex flex-col mt-3 items-center  w-100 `}>
-        <div className="flex flex-col mb-12">
-          <div className={` text-black text-sm font-semibold`}>کد تأیید</div>
+      <div className="flex flex-col mt-3 items-center  w-full  ">
+        <div className="flex flex-col mb-[8rem]">
+          <div className="text-black text-sm font-semibold">کد تأیید</div>
 
           <VerificationInput
             length={CODE_LENGTH}
