@@ -434,3 +434,29 @@ Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
 2-const router = useRouter();
 3- <ArrowBackRoundedIcon  className={backlink ? "" : "hidden"}  onClick={() => router.back()} />
 ```
+
+### button (mui)
+```jsx
+//1
+//w-full sm:w-auto
+  <div className="w-full sm:w-auto">
+        <Button
+          variant="contained"
+          className="w-full sm:w-auto py-3 px-18 sm:px-32"
+          onClick={() =>submit()}
+        >
+          مرحله بعد
+        </Button>
+ </div>
+ //2 w-[240px] md:w-[400px]
+  <div className="flex flex-col mb-12">
+        <Button
+          variant="contained"
+          className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-[15px]"
+          color="primary"
+          onClick={submit}
+        >
+          مرحله‌ بعد
+        </Button>
+</div>
+```
