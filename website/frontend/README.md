@@ -407,6 +407,5 @@ const LoginLayout = (props) => {
  
 export default LoginLayout;
 
-
-
 ```
+![layout](./screenshots/Layout.png)
