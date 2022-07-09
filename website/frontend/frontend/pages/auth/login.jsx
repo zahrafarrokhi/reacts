@@ -25,7 +25,7 @@ const Login = (props) => {
   };
   return (
     <div className="flex flex-col items-center justify-center  relative -top-[10px] h-full">
-      <div className="flex align-items-center justify-content-center ">
+      <div className="flex items-center justify-center ">
         <ToggleButtonGroup
           variant="outlined"
           color="secondary"
