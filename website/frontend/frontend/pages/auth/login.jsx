@@ -24,21 +24,20 @@ const Login = (props) => {
     if (e.key === "Enter") submit();
   };
   return (
-    <div className="flex flex-col items-center justify-around    h-full">
-      <div className="flex items-center justify-center pt-12">
+    <div className="flex flex-col items-center justify-around py-12 h-full">
+      <div className="flex items-center justify-center">
         <ToggleButtonGroup
           variant="contained"
           // color="primary"
           color="secondary"
+          className="transition-all duration-300		"
           // color={state === "phonenumber" ? "primary" : "danger"}
           sx={{
             width: "240px",
             // height: "auto",
-            padding: "5px",
+            // padding: "5px",
             display: "flex",
-            borderWidth: "1px",
-            borderStyle: "solid",
-            bordderColor: "gray",
+            border: `1px solid ${theme.palette.secondary.main}`,
             // backgroundColor: theme.palette.secondary.main,
             color: theme.palette.secondary.main,
             borderRadius: "10px",
@@ -67,10 +66,11 @@ const Login = (props) => {
         >
           <ToggleButton
             // color="danger"
+            className="transition-all duration-300		"
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px !important",
-              borderWidth: 0,
+              borderWidth: "0px !important",
               fontSize: "15px",
               // fontWeight: "bold",
               // padding: "16px",
@@ -81,11 +81,13 @@ const Login = (props) => {
             تلفن همراه
           </ToggleButton>
           <ToggleButton
+            className="transition-all duration-300		"
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px !important",
-              borderWidth: 0,
+              // borderWidth: 0,
               fontSize: "15px",
+              borderWidth: "0px !important",
               // fontWeight: "bold",
               // padding: "16px",
             }}
@@ -98,14 +100,16 @@ const Login = (props) => {
       </div>
 
       <div className="flex flex-row justify-around ">
-        <div className="flex flex-col items-center py-5  w-full ">
+        <div className="flex flex-col items-center py-3  w-full ">
           <div className="items-right">
             <InputLabel
               htmlFor="loginInput"
-              sx={{
-                fontSize: "18px",
-                // color: theme.palette.textBlack.main,
-              }}
+              sx={
+                {
+                  // fontSize: "15",
+                  // color: theme.palette.textBlack.main,
+                }
+              }
             >
               {state === "phonenumber" ? "تلفن همراه" : "ایمیل"}
             </InputLabel>
