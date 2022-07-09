@@ -572,6 +572,29 @@ Mui ToggleButtonGroup uses an external class to change borderRadius for its chil
 ![login](./screenshots/login.png)
 
 #### confirm
+```jsx
+<div class="flex flex-col  items-center justify-around grow">
+  <div className="flex flex-col items-center pt-12">
+    
+      لطفا کد ارسال شده به شماره
+    
+    ...
+  </div>
+
+  <div className="flex flex-col mt-3 items-center justify-around grow  ">
+    <div className="flex flex-col ">
+     <VerificationInput/>
+    </div>
+    
+    <div className="m-3 flex  flex-row justify-between">
+    <Button/>
+    </div>
+  </div>
+
+</div >
+
+
+```
 ###### VerificationInput
 ```jsx
 // state
