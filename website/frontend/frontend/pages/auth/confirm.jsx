@@ -90,7 +90,7 @@ const Confirm = () => {
             className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3"
             color="primary"
             // onClick={submit}
-            // disabled={time === 0 || code.length !== 4}
+            disabled={time === 0 || code.length !== 4}
           >
             مرحله‌ بعد
           </Button> */}
