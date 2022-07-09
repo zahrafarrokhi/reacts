@@ -32,7 +32,6 @@ const Confirm = () => {
     };
   }, []);
 
-
   return (
     <div className="flex flex-col grow mt-20">
       {/* 1 */}
@@ -42,7 +41,9 @@ const Confirm = () => {
         >
           لطفا کد ارسال شده به شماره
         </div>
-        <div className={`flex flex-row text-primary font-semibold `}>{9122222277}</div>
+        <div className={`flex flex-row text-primary font-semibold `}>
+          {"09122222277"}
+        </div>
         <div
           className={`flex flex-row  text-black font-bold text-sm text-center`}
         >
@@ -73,17 +74,17 @@ const Confirm = () => {
 
         {/* btn & timer  */}
         <div className="flex flex-col mb-12">
-        <div className="w-full sm:w-auto self-center">
-        <Button
-          variant="contained"
-          className="w-full sm:w-auto py-3 px-18 sm:px-32"
-          color="primary"
-            // onClick={submit}
-            // disabled={time === 0 || code.length !== 4}
-        >
-          مرحله بعد
-        </Button>
-      </div>
+          <div className="w-full sm:w-auto self-center">
+            <Button
+              variant="contained"
+              className="w-full sm:w-auto py-3 px-18 sm:px-32"
+              color="primary"
+              // onClick={submit}
+              // disabled={time === 0 || code.length !== 4}
+            >
+              مرحله بعد
+            </Button>
+          </div>
           {/* <Button
             variant="contained"
             className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3"
