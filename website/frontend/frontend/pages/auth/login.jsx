@@ -24,14 +24,15 @@ const Login = (props) => {
     if (e.key === "Enter") submit();
   };
   return (
-    <div className="flex flex-col items-center justify-center  relative -top-[10px] h-full">
-      <div className="flex items-center justify-center ">
+    <div className="flex flex-col items-center justify-around    h-full">
+      <div className="flex items-center justify-center pt-12">
         <ToggleButtonGroup
           variant="outlined"
-          color="secondary"
+          color="primary"
+          // color={state === "phonenumber" ? "primary" : "danger"}
           sx={{
             width: "240px",
-            height: "40px",
+            // height: "auto",
             padding: "5px",
             display: "flex",
             borderWidth: "1px",
@@ -44,20 +45,23 @@ const Login = (props) => {
             // borderColor: theme.palette.secondary.main,
             [theme.breakpoints.up("md")]: {
               width: " 327px",
-              height: "50px",
+              // height: "50px",
               padding: "5px",
             },
           }}
-          onChange={(e) => setState(e.target.value)}
+          exclusive
+          // onChange={(e) => setState(e.target.value)}
+          onChange={(e, val) => val && setState(val)}
           value={state}
         >
           <ToggleButton
+            // color="danger"
             sx={{
               flex: "1 0 45%",
-              borderRadius: "10px",
+              borderRadius: "10px !important",
               borderWidth: 0,
               fontSize: "20px",
-              padding: "20px",
+              padding: "10px",
             }}
             //  onChange={() => ({})}
             value={"phonenumber"}
@@ -67,12 +71,10 @@ const Login = (props) => {
           <ToggleButton
             sx={{
               flex: "1 0 45%",
-              borderRadius: "10px",
+              borderRadius: "10px !important",
               borderWidth: 0,
               fontSize: "20px",
-              padding: "20px",
-              // borderTopWidth: "10px",
-              // borderBottomWidth: "10px",
+              padding: "10px",
             }}
             //  onChange={() => ({})}
             value={"email"}
@@ -82,7 +84,7 @@ const Login = (props) => {
         </ToggleButtonGroup>
       </div>
 
-      <div className="flex flex-row justify-around my-[80px]">
+      <div className="flex flex-row justify-around ">
         <div className="flex flex-col items-center py-5  w-full ">
           <div className="items-right">
             <InputLabel
@@ -129,7 +131,7 @@ const Login = (props) => {
       </div>
 
       {/* btn */}
-      <div className="flex flex-col mb-[20px] ">
+      <div className="flex flex-col pb-12 ">
         <Button
           variant="contained"
           className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-lg "

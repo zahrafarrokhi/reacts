@@ -505,6 +505,70 @@ export const persianToEnglishDigits = (digit) => String(digit)
 
 
 ```
+##### newVal.splice is not a function
+This error occurs because ToggleButtonGroup expects its state to be an array of all the selected buttons.
+In order to make it so that only one item can be selected at a time, add `exclusive` prop to ToggleButtonGroup.
+
+Note: If you're using `(e, value)` remember that value can be null if an item is selected twice. So we use `val && setState...` to ensure that if val is null/undefined/empty we don't change the state.
+```jsx
+        <ToggleButtonGroup
+          ...
+          exclusive
+          // onChange={(e) => setState(e.target.value)}
+          //or 
+          onChange={(e, val) => val && setState(val)}
+          value={state}
+        >
+```
+
+##### Removing ToggleButton borderradius
+Mui ToggleButtonGroup uses an external class to change borderRadius for its children. In order to override it we need to use !important in our styles:
+
+```jsx
+  <ToggleButton
+    sx={{
+     
+      borderWidth: 0,
+     
+    }}
+    ...
+```
+##### flex
+```jsx
+<div className="flex flex-col items-center justify-center  relative -top-[10px] h-full">
+  <div className="flex items-center justify-center ">
+          
+  </div>
+  
+{/* label,input */}
+  <div className="flex flex-row justify-around my-[80px]">
+    <div className="flex flex-col items-center py-5  w-full ">
+      
+    </div>
+  </div>
+
+  {/* btn */}
+  <div className="flex flex-col mb-[20px] ">
+    <Button
+    
+    >
+      مرحله‌ بعد
+    </Button>
+  </div>
+</div>
+ 
+```
+```jsx
+<div className="flex flex-col items-center justify-around h-full">
+  <div className="flex items-center justify-center pt-12">
+  </div>
+  <div className="flex flex-row justify-around ">
+  </div>
+  <div className="flex flex-col pb-12 "><div className="flex flex-col pb-12 ">
+  </div>
+</div>
+```
+
 ![login](./screenshots/login.png)
 
 #### confirm
