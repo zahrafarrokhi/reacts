@@ -113,6 +113,11 @@ let theme = createTheme({
   },
 
 
+  typography: {
+    fontFamily: 'IranSans',
+    fontSize: 16,
+  },
+
 
 });
 theme = createTheme(theme, {

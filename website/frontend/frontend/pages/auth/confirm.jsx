@@ -73,7 +73,18 @@ const Confirm = () => {
 
         {/* btn & timer  */}
         <div className="flex flex-col mb-12">
-          <Button
+        <div className="w-full sm:w-auto self-center">
+        <Button
+          variant="contained"
+          className="w-full sm:w-auto py-3 px-18 sm:px-32"
+          color="primary"
+            // onClick={submit}
+            // disabled={time === 0 || code.length !== 4}
+        >
+          مرحله بعد
+        </Button>
+      </div>
+          {/* <Button
             variant="contained"
             className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3"
             color="primary"
@@ -81,7 +92,7 @@ const Confirm = () => {
             // disabled={time === 0 || code.length !== 4}
           >
             مرحله‌ بعد
-          </Button>
+          </Button> */}
           <div className="m-3 flex  flex-row justify-between mb-12">
             <div
               className={`flex text-sm ${

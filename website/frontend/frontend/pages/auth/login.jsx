@@ -27,7 +27,7 @@ const Login = (props) => {
     <div className="flex flex-col items-center justify-around    h-full">
       <div className="flex items-center justify-center pt-12">
         <ToggleButtonGroup
-          variant="outlined"
+          variant="contained"
           // color="primary"
           color="secondary"
           // color={state === "phonenumber" ? "primary" : "danger"}
@@ -47,7 +47,17 @@ const Login = (props) => {
             [theme.breakpoints.up("md")]: {
               width: " 327px",
               // height: "50px",
-              padding: "5px",
+              padding: "0px",
+            },
+            "& .Mui-selected": {
+              backgroundColor: "rgba(133, 143, 173, 0.4) !important",
+              color: "white !important",
+            },
+            "& > *:first-child": {
+              // marginRight: "-1px",
+            },
+            "& > *:last-child": {
+              // marginLeft: "-1px",
             },
           }}
           exclusive
@@ -61,8 +71,9 @@ const Login = (props) => {
               flex: "1 0 45%",
               borderRadius: "10px !important",
               borderWidth: 0,
-              fontSize: "20px",
-              padding: "10px",
+              fontSize: "15px",
+              // fontWeight: "bold",
+              // padding: "16px",
             }}
             //  onChange={() => ({})}
             value={"phonenumber"}
@@ -74,8 +85,9 @@ const Login = (props) => {
               flex: "1 0 45%",
               borderRadius: "10px !important",
               borderWidth: 0,
-              fontSize: "20px",
-              padding: "10px",
+              fontSize: "15px",
+              // fontWeight: "bold",
+              // padding: "16px",
             }}
             //  onChange={() => ({})}
             value={"email"}
@@ -132,7 +144,16 @@ const Login = (props) => {
       </div>
 
       {/* btn */}
-      <div className="flex flex-col pb-12 ">
+      <div className="w-full sm:w-auto">
+        <Button
+          variant="contained"
+          className="w-full sm:w-auto py-3 px-18 sm:px-32"
+          onClick={() => handleSubmit()}
+        >
+          مرحله بعد
+        </Button>
+      </div>
+      {/* <div className="flex flex-col pb-12 ">
         <Button
           variant="contained"
           className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-lg "
@@ -141,7 +162,7 @@ const Login = (props) => {
         >
           مرحله‌ بعد
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };
