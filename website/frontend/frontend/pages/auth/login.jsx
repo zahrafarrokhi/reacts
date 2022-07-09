@@ -28,7 +28,8 @@ const Login = (props) => {
       <div className="flex items-center justify-center pt-12">
         <ToggleButtonGroup
           variant="outlined"
-          color="primary"
+          // color="primary"
+          color="secondary"
           // color={state === "phonenumber" ? "primary" : "danger"}
           sx={{
             width: "240px",
