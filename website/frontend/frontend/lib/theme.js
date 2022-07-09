@@ -115,7 +115,7 @@ let theme = createTheme({
 
   typography: {
     fontFamily: 'IranSans',
-    fontSize: 16,
+    fontSize: 14,
   },
 
 
