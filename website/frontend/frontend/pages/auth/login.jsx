@@ -72,8 +72,7 @@ const Login = (props) => {
               borderRadius: "10px !important",
               borderWidth: "0px !important",
               fontSize: "15px",
-              // fontWeight: "bold",
-              // padding: "16px",
+              
             }}
             //  onChange={() => ({})}
             value={"phonenumber"}
@@ -85,11 +84,9 @@ const Login = (props) => {
             sx={{
               flex: "1 0 45%",
               borderRadius: "10px !important",
-              // borderWidth: 0,
-              fontSize: "15px",
               borderWidth: "0px !important",
-              // fontWeight: "bold",
-              // padding: "16px",
+              fontSize: "15px",
+             
             }}
             //  onChange={() => ({})}
             value={"email"}

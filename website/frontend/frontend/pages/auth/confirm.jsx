@@ -35,7 +35,7 @@ const Confirm = () => {
   return (
     <div className="flex flex-col grow mt-20">
       {/* 1 */}
-      <div className="flex flex-col items-center mb-12">
+      <div className="flex flex-col items-center mb-14">
         <div
           className={`flex flex-row text-black font-bold text-sm text-center `}
         >
@@ -51,7 +51,7 @@ const Confirm = () => {
         </div>
       </div>
       {/* VerificationInput */}
-      <div className="flex flex-col mt-3 items-center  w-full  ">
+      <div className="flex flex-col mt-5 items-center  w-full  ">
         <div className="flex flex-col mb-[8rem]">
           <div className="text-black text-sm font-semibold">کد تأیید</div>
 
@@ -94,7 +94,7 @@ const Confirm = () => {
           >
             مرحله‌ بعد
           </Button> */}
-          <div className="m-3 flex  flex-row justify-between mb-12">
+          <div className="m-3 flex  flex-row justify-between mb-14">
             <div
               className={`flex text-sm ${
                 time === 0 ? "text-primary" : "text-textSecondaryDark"
