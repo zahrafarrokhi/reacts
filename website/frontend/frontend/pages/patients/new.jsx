@@ -108,7 +108,7 @@ const NewPatient = () => {
           variant="contained"
           className="w-[240px] md:w-[400px] h-[3.2em] rounded-[10px] p-3 text-lg"
           color="primary"
-          disabled={!(birthdate?.length > 0 && nationalIdValid)}
+          // disabled={!(birthdate?.length > 0 && nationalIdValid)}
           onClick={submit}
         >
           مرحله بعد

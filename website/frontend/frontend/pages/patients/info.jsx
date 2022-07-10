@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import {
   Button,
   Checkbox,
@@ -8,10 +8,10 @@ import {
   MenuItem,
   Select,
   TextField,
-} from '@mui/material';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
-import LoginLayout from '../../components/LoginLayout';
+} from "@mui/material";
+import PropTypes from "prop-types";
+import { useTheme } from "@mui/material/styles";
+import LoginLayout from "../../components/LoginLayout";
 // import {
 //   loadCities,
 //   loadSupplementaryInsurance,
@@ -26,7 +26,7 @@ function MultiSelect(props) {
       onChange={onChange}
       //  {...props}
       sx={{
-        width: '100%',
+        width: "100%",
       }}
     >
       {options?.map((item) => (
@@ -40,13 +40,13 @@ MultiSelect.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       id: PropTypes.any,
-    }),
+    })
   ),
   value: PropTypes.any,
   onChange: PropTypes.func,
 };
 function MultiSelectBackend(props) {
-  const { fieldData, disabled, value: value1, onChange ,} = props;
+  const { fieldData, disabled, value: value1, onChange } = props;
   // const options = useSelector(fieldData.dataAddress);
   return (
     <Select
@@ -55,7 +55,7 @@ function MultiSelectBackend(props) {
       //  {...props}
       disabled={disabled}
       sx={{
-        width: '100%',
+        width: "100%",
       }}
     >
       {/* {options?.map((item) => (
@@ -70,7 +70,7 @@ MultiSelectBackend.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       id: PropTypes.any,
-    }),
+    })
   ),
   value: PropTypes.any,
   onChange: PropTypes.func,
@@ -86,9 +86,8 @@ function InputCityComponent(props) {
       onChange={onChange}
       //  {...props}
       disabled={disabled}
-
       sx={{
-        width: '100%',
+        width: "100%",
       }}
     >
       {/* {cities
@@ -104,22 +103,22 @@ function InputCityComponent(props) {
 const FIELDS = [
   // field
   {
-    id: 'national_id',
-    label: 'کد ملی',
+    id: "national_id",
+    label: "کد ملی",
     editable: true,
     component: TextField,
     disabled: () => true,
   },
   {
-    id: 'first_name',
-    label: 'نام',
+    id: "first_name",
+    label: "نام",
     required: true,
     // editable: false,
     component: TextField,
   },
   {
-    id: 'last_name',
-    label: 'نام خانوادگی',
+    id: "last_name",
+    label: "نام خانوادگی",
     required: true,
     // editable: false,
     component: TextField,
@@ -132,91 +131,93 @@ const FIELDS = [
   //   component: DateComponent,
   // },
   {
-    id: 'gender',
-    label: 'جنسیت',
+    id: "gender",
+    label: "جنسیت",
     required: true,
     editable: false,
     component: MultiSelect,
     options: [
       {
-        id: 'f',
-        name: 'زن',
+        id: "f",
+        name: "زن",
       },
       {
-        id: 'm',
-        name: 'مرد',
+        id: "m",
+        name: "مرد",
       },
     ],
   },
   {
-    id: 'province',
-    label: 'استان',
-    type: 'province',
+    id: "province",
+    label: "استان",
+    type: "province",
     editable: false,
     component: InputCityComponent,
   },
   {
-    id: 'city',
-    label: 'شهر',
-    type: 'city',
-    disabled: (state) => state.province === null || state.province === undefined,
+    id: "city",
+    label: "شهر",
+    type: "city",
+    disabled: (state) =>
+      state.province === null || state.province === undefined,
     editable: false,
     component: InputCityComponent,
   },
   {
-    id: 'insurance',
-    label: 'بیمه',
+    id: "insurance",
+    label: "بیمه",
     editable: false,
     component: MultiSelect,
     options: [
       {
-        id: 'none',
-        name: 'هیچ کدام',
+        id: "none",
+        name: "هیچ کدام",
       },
       {
-        id: 'tamin',
-        name: 'تامین اجتماعی',
+        id: "tamin",
+        name: "تامین اجتماعی",
       },
       {
-        id: 'salamat',
-        name: 'سلامت',
+        id: "salamat",
+        name: "سلامت",
       },
       {
-        id: 'mosalah',
-        name: 'نیروهای مسلح',
+        id: "mosalah",
+        name: "نیروهای مسلح",
       },
       {
-        id: 'khadamat',
-        name: 'خدمات درمانی',
+        id: "khadamat",
+        name: "خدمات درمانی",
       },
       {
-        id: 'other',
-        name: 'متفرقه',
+        id: "other",
+        name: "متفرقه",
       },
     ],
   },
   {
-    id: 'hasSupIns',
-    label: 'بیمه تکمیلی',
+    id: "hasSupIns",
+    label: "بیمه تکمیلی",
     editable: false,
     component: MultiSelect,
     options: [
       {
-        id: 'false',
-        name: 'خیر',
+        id: "false",
+        name: "خیر",
       },
       {
-        id: 'true',
-        name: 'بله',
+        id: "true",
+        name: "بله",
       },
     ],
   },
   {
-    id: 'supplementary_insurance',
-    label: 'بیمه گذار',
-    disabled: (state) => state.hasSupIns !== 'true',
+    id: "supplementary_insurance",
+    label: "بیمه گذار",
+    disabled: (state) => state.hasSupIns !== "true",
     component: MultiSelectBackend,
-    dataAddress: (state) => state.contantDataReducer?.supplementaryInsuranceList,
+    dataAddress: (state) =>
+      state.contantDataReducer?.supplementaryInsuranceList,
   },
 ];
 
@@ -229,14 +230,14 @@ function PatientInfo(props) {
     try {
       // await dispatch(loadCities()).unwrap()
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   };
   const fetchInsurances = async () => {
     try {
       // await dispatch(loadSupplementaryInsurance()).unwrap()
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   };
   useEffect(() => {
@@ -254,9 +255,9 @@ function PatientInfo(props) {
             // error
             component="fieldset"
             sx={{
-              flex: '1 0 28%',
-              [theme.breakpoints.down('md')]: {
-                flex: '1 0 90%',
+              flex: "1 0 28%",
+              [theme.breakpoints.down("md")]: {
+                flex: "1 0 90%",
               },
             }}
             className="m-1 my-4"
@@ -264,10 +265,10 @@ function PatientInfo(props) {
             <FormLabel
               sx={{
                 color: theme.palette.textBlack.main,
-                '&.Mui-focused': {
+                "&.Mui-focused": {
                   color: theme.palette.textBlack.main,
                 },
-                '& .MuiFormLabel-asterisk': {
+                "& .MuiFormLabel-asterisk": {
                   color: theme.palette.error.main,
                 },
               }}
@@ -277,8 +278,8 @@ function PatientInfo(props) {
             </FormLabel>
             <field.component
               value={state[field.id]}
-              type = {field.type}
-              sx={{ width: '100%' }}
+              type={field.type}
+              sx={{ width: "100%" }}
               // label="test"
               disabled={(field.disabled ?? (() => false))(state)}
               fieldData={field}
@@ -290,12 +291,8 @@ function PatientInfo(props) {
             />
           </FormControl>
         );
-   
-     
       })}
-      <div
-        className="flex flex-row justify-center items-center flex-grow basis-full mt-3 mb-3 py-6 md:p-6"
-      >
+      <div className="flex flex-row justify-center items-center flex-grow basis-full mt-3 mb-3 py-6 md:p-6">
         <Button variant="contained" className="w-[240px] md:w-[400px]">
           تکمیل ثبت‌نام
         </Button>
@@ -306,10 +303,6 @@ function PatientInfo(props) {
 
 // layout
 PatientInfo.getLayout = (page) => (
-  <LoginLayout backlink={false}>
-    {' '}
-    {page}
-    {' '}
-  </LoginLayout>
+  <LoginLayout backlink={false}> {page} </LoginLayout>
 );
 export default PatientInfo;
