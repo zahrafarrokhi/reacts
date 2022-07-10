@@ -13,6 +13,7 @@ const MainLayout = (props) => {
       </aside>
       {/* Header,main */}
       <div className="flex flex-col flex-grow overflow-hidden">
+      {/* ? */}
       <Header openNavBar={() => setOpen(true)} />
         <main >{children}</main>
       </div>

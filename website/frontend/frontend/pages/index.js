@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LoginLayout from "../components/LoginLayout";
+import MainLayout from "../components/MainLayout";
 
 export default function Home() {
   return (
@@ -10,4 +10,4 @@ export default function Home() {
 }
 
 //getLayout
-Home.getLayout = (page) => <LoginLayout backlink> {page}</LoginLayout>;
+Home.getLayout = (page) => <MainLayout backlink> {page}</MainLayout>;

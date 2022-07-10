@@ -16,14 +16,18 @@ import SupportIcon from "../icons/SupportIconBlue.svg";
 import VisitsIcon from "../icons/VisitsIconBlue.svg";
 import TransactionsIcon from "../icons/TransactionsIconBlue.svg";
 import ProfileIcon from "../icons/ProfileIconBlue.svg";
+// import DoctorReportIcon from "../icons/DoctorReport.svg";
 
-//
+
+//navs
 const navs = [
   [
     {
       name: "پزشکان",
       link: "/doctors",
+      //?
       path: /^\/$/g,
+      //?
       icon: (props) => <Doctors {...props} className={`${props.className}`} />,
     },
     {
@@ -75,18 +79,39 @@ const navs = [
     },
   ],
 ];
-
-const NavigationBar = (props) => {
+function NavigationBar(props) {
+  const { isOpen, willClose } = props;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const router = useRouter();
   return (
-    <div className="flex flex-col justify-between w-full py-10 flex-grow border-0 border-l-2 border-solid border-lightgray">
-      <div className="flex flex-col">
-      {navs.map((navin) => (
+    <SwipeableDrawer
+      anchor={isMobile ? "bottom" : "right"}
+      open={isOpen}
+      onClose={willClose}
+      //?
+      variant={isMobile ? "temporary" : "permanent"}
+      sx={{
+        "& .MuiDrawer-paper": {
+          borderLeft: "0",
+          [theme.breakpoints.down("md")]: {
+            borderTopLeftRadius: "1em",
+            borderTopRightRadius: "1em",
+          },
+          [theme.breakpoints.up("md")]: {
+            width: "240px",
+          },
+        },
+      }}
+    >
+      <div className="flex flex-col justify-between w-full py-10 flex-grow border-0 border-l-2 border-solid border-lightgray">
+        <div className="flex flex-col">
+          {navs.map((navin) => (
             <>
-         
-          {navin.map((nav) => (
+              {navin.map((nav) => (
                 <Link key={nav.name} href={nav.link}>
-                   <a
+                  {/* ? */}
+                  <a
                     className={`flex transition-all items-center justify-start m-3 font-normal text-base py-1 cursor-pointer text-black hover:text-primary no-underline 
               [&>*]:hover:text-primary [&>*>*]:hover:text-primary [&>*>*>*]:hover:text-primary stroke-primary [&>*]:hover:stroke-primary [&>*>*]:hover:stroke-primary [&>*>*>*]:hover:stroke-primary fill-primary [&>*]:hover:fill-primary [&>*>*]:hover:fill-primary [&>*>*>*]:hover:fill-primary 
               ${
@@ -101,21 +126,21 @@ const NavigationBar = (props) => {
                   </a>
                 </Link>
               ))}
-            <Divider className="w-[60%] self-center " />
+              <Divider className="w-[60%] self-center " />
             </>
           ))}
-        
+        </div>
+        {/* exit */}
+        <Link href="/auth/login">
+          <a className="flex flex-row m-1 p-2 text-black no-underline mb-12">
+            <IoLogOutOutline className="m-1 text-danger" />
+            {/* <IoLogOutOutline className="m-1 text-danger [&>*]:text-danger [&>*>*]:text-danger [&>*>*>*]:text-danger stroke-danger [&>*]:stroke-danger [&>*>*]:stroke-danger [&>*>*>*]:stroke-danger  " /> */}
+            خروج از حساب کاربری
+          </a>
+        </Link>
       </div>
-      {/* exit */}
-      <Link href="/auth/login">
-        <a className="flex flex-row m-1 p-2 text-black no-underline mb-12">
-        <IoLogOutOutline className="m-1 text-danger "/>
-         {/* <IoLogOutOutline className="m-1 text-danger [&>*]:text-danger [&>*>*]:text-danger [&>*>*>*]:text-danger stroke-danger [&>*]:stroke-danger [&>*>*]:stroke-danger [&>*>*>*]:stroke-danger  " /> */}
-          خروج از حساب کاربری
-        </a>
-      </Link>
-    </div>
+    </SwipeableDrawer>
   );
-  
-};
+}
+
 export default NavigationBar;
