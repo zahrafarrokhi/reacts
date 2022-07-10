@@ -246,7 +246,7 @@ function PatientInfo(props) {
   }, []);
 
   return (
-    <div className="flex flex-row flex-wrap p-3  mt-12">
+    <div className="flex flex-row flex-wrap p-10  md:mt-12">
       {FIELDS.map((field, i) => {
         return (
           <FormControl
@@ -272,7 +272,7 @@ function PatientInfo(props) {
                   color: theme.palette.error.main,
                 },
               }}
-              className="m-1 mx-2"
+              className="m-2 mx-2"
             >
               {field.label}
             </FormLabel>
@@ -292,8 +292,8 @@ function PatientInfo(props) {
           </FormControl>
         );
       })}
-      <div className="flex flex-row justify-center items-center flex-grow basis-full mt-3 mb-3 py-6 md:p-6">
-        <Button variant="contained" className="w-[240px] md:w-[400px]">
+      <div className="flex flex-row justify-center items-center flex-grow basis-full md:mt-5 md:mb-10 py-10 md:p-6">
+        <Button variant="contained" className="w-full md:w-[400px] ">
           تکمیل ثبت‌نام
         </Button>
       </div>

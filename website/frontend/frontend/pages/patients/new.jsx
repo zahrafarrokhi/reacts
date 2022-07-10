@@ -44,7 +44,7 @@ const NewPatient = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center mt-10">
-      <div className="flex flex-row p-3 mt-10">
+      <div className="flex flex-row p-3 mt-8">
         <p className="text-center ">
           لطفا کد‌ملی و تاریخ تولد خود را وارد کنید.
         </p>
@@ -103,7 +103,7 @@ const NewPatient = () => {
           editable
         />
       </div>
-      <div className="flex flex-row items-center justify-center  mt-40">
+      <div className="flex flex-row items-center justify-center  mt-20 mb-20">
         <Button
           variant="contained"
           className="w-[240px] md:w-[400px] h-[3.2em] rounded-[10px] p-3 text-lg"

@@ -12,8 +12,8 @@ const Patients = () => {
   const router = useRouter();
   return (
     <div className="flex flex-col items-center justify-center grow mt-5">
-      <div className="flex flex-row ">
-        <p className="flex flex-row  text-lg text-black text-center ">
+      <div className="flex flex-row p-1">
+        <p className="flex flex-row text-[14px]  md:text-lg text-black text-center p-3">
           خوش‌آمدید، در صورت داشتن پروفایل روی نام خود کلیک کرده، سپس دکمه‌ی
           ورود را بزنید.
           <br />
@@ -27,7 +27,7 @@ const Patients = () => {
         {[1, 2, 3].map((id) => (
           <Button
             variant="outlined"
-            className="m-3 w-[240px] md:w-[366px] h-[3em]  rounded-lg border-size-[2px] text-xl text-semibold"
+            className="m-3 w-[240px] md:w-[366px] h-[3em]  rounded-lg border-size-[2px] text-sm md:text-xl text-semibold"
             sx={{
               // color: theme.palette.textBlack.main,
               borderWidth: "2px",
@@ -45,7 +45,7 @@ const Patients = () => {
         {/* + */}
         <Button
           variant="outlined"
-          className="m-3 w-[240px] md:w-[366px] h-[3em]  rounded-lg border-size-[2px] text-xl text-semibold"
+          className="m-3 w-[240px] md:w-[366px] h-[3em]  rounded-lg border-size-[2px] text-sm md:text-xl text-semibold"
           startIcon={<HiPlus className="mx-3 font-bold " />}
           onClick={() => {
             router.push("/patients/new");

@@ -24,7 +24,7 @@ const Login = (props) => {
     if (e.key === "Enter") submit();
   };
   return (
-    <div className="flex flex-col items-center justify-around py-12 h-full">
+    <div className="flex flex-col items-center justify-around py-12 mt-3 h-full">
       <div className="flex items-center justify-center">
         <ToggleButtonGroup
           variant="contained"
@@ -94,7 +94,7 @@ const Login = (props) => {
         </ToggleButtonGroup>
       </div>
 
-      <div className="flex flex-row justify-around ">
+      <div className="flex flex-row justify-around m-[20px] py-10">
         <div className="flex flex-col items-center py-3  w-full ">
           <div className="items-right">
             <InputLabel
@@ -143,25 +143,25 @@ const Login = (props) => {
       </div>
 
       {/* btn */}
-      <div className="w-full sm:w-auto">
+      {/* <div className="w-full sm:w-auto ">
         <Button
           variant="contained"
-          className="w-full sm:w-auto py-3 px-18 sm:px-32"
+          className="w-full sm:w-auto py-3 px-18 sm:px-20"
           onClick={() => handleSubmit()}
         >
           مرحله بعد
         </Button>
-      </div>
-      {/* <div className="flex flex-col pb-12 ">
+      </div> */}
+      <div className="flex flex-col py-12  ">
         <Button
           variant="contained"
-          className="w-[240px] md:w-[400px] h-[3.5em] rounded-[10px] p-3 text-lg "
+          className="w-[240px] md:w-[400px] h-[3.2em] rounded-[10px] text-lg "
           color="primary"
           onClick={submit}
         >
           مرحله‌ بعد
         </Button>
-      </div> */}
+      </div>
     </div>
   );
 };
