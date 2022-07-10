@@ -72,7 +72,6 @@ const Login = (props) => {
               borderRadius: "10px !important",
               borderWidth: "0px !important",
               fontSize: "15px",
-              
             }}
             //  onChange={() => ({})}
             value={"phonenumber"}
@@ -86,7 +85,6 @@ const Login = (props) => {
               borderRadius: "10px !important",
               borderWidth: "0px !important",
               fontSize: "15px",
-             
             }}
             //  onChange={() => ({})}
             value={"email"}
