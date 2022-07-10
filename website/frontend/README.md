@@ -778,5 +778,33 @@ const navs = [
           ))}
         
  </div>
+
+//add SwipeableDrawer
+import {
+  Divider,
+  SwipeableDrawer,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  <SwipeableDrawer
+      anchor={isMobile ? "bottom" : "right"}
+      open={isOpen}
+      onClose={willClose}
+      variant={isMobile ? "temporary" : "permanent"}
+      sx={{
+        "& .MuiDrawer-paper": {
+          borderLeft: "0",
+          [theme.breakpoints.down("md")]: {
+            borderTopLeftRadius: "1em",
+            borderTopRightRadius: "1em",
+          },
+          [theme.breakpoints.up("md")]: {
+            width: "240px",
+          },
+        },
+      }}
+    >
+</SwipeableDrawer>
 ```
 
