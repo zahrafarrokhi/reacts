@@ -709,3 +709,74 @@ setState(getNewValue)
 ```
 
 ![confirm](./screenshots/confirm.png)
+
+
+###### MainLayout
+```jsx
+//MainLayout
+<aside className="hidden md:flex flex-col basis-[240px]">
+        <NavigationBar isOpen={open} willClose={() => setOpen(false)} />
+</aside>
+
+```
+##### NavigationBar
+```jsx
+const navs = [
+  //doctors,pharmacy,laboratory
+  [
+    {
+      name: "پزشکان",
+    },
+    {
+      name: "داروخانه‌",    
+    },
+    {
+      name: "آزمایشگاه",
+    
+    },
+  ],
+  //visits,
+  [
+    {
+      name: "ویزیت‌ها",      
+    },
+  ],
+  //transactions,profile
+  [
+    {
+      name: "تراکنش‌ها",      
+    },
+    {
+      name: "  ناحیه کاربری",
+    },
+  ],
+  //support
+  [
+    {
+      name: " پشتیبانی",
+      
+    },
+  ],
+];
+//
+  <div className="flex flex-col">
+      {navs.map((navin) => (
+            <>
+          
+          {navin.map((nav) => (
+                <Link key={nav.name} href={nav.link}>
+                  <a>
+                 
+                    {nav.path.test(router.asPath)}
+                    <nav.icon className="text-xs w-[1rem] h-[1rem]  [&>*]:stroke-[0.3px] stroke-[0.3px] mr-4 ml-2" />
+                    {nav.name}
+                  </a>
+                </Link>
+              ))}
+            <Divider className="w-[60%] self-center " />
+            </>
+          ))}
+        
+ </div>
+```
+
