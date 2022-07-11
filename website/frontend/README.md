@@ -815,4 +815,61 @@ next => npm i next-redux-wrapper
 async func => npm i redux-thunk @reduxjs/toolkit
 persist => npm i redux-persist
 ```
+```jsx
+reducer => state,action { type, payload }
+combineReducer from type recognize which reducer(func) should be called
+```
+`lib/store.js`
+```jsx
+server => 
 
+
+  if (isClient) {
+    use LocalStorage and redux persist
+
+    const { persistReducer } = require('redux-persist');
+    const storage = require('redux-persist/lib/storage').default;
+
+    // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+...
+
+      const persistConfig = {
+      key: 'root',
+      storage,
+    };
+
+    const persistedReducers = persistReducer(persistConfig, rootReducer); // Wrapper reducers: if incoming actions are persist actions, run persist commands otherwise use rootReducer to update the state
+
+    store = configureStore({
+      reducer: persistedReducers, preloadedState: initialState, middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }).concat(thunk), devTools: { shouldStartLocked: false },
+    });
+
+    store.__PERSISTOR = persistStore(store);
+  }
+  else{
+
+  dont use LocalStorage and redux persist
+  above code removed
+
+  }
+```
+`_app.js`
+```jsx
+import { useStore } from 'react-redux';
+import { wrapper } from '../lib/store'
+
+function MyApp(...) {
+  ...
+  const store = useStore();
+
+  ...
+  return (
+     <PersistGate persistor={store.__PERSISTOR} loading={null}>
+    ....
+    </PersistGate>
+  )
+}
+export default wrapper.withRedux(MyApp)
+
+```

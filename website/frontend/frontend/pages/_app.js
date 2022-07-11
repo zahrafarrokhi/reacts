@@ -13,6 +13,8 @@ import theme from '../lib/theme';
 import createEmotionCache from '../lib/createEmotionCache';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider } from '@mui/system';
+import { useStore } from 'react-redux';
+import { wrapper } from '../lib/store'
 
 
 const clientSideEmotionCache = createEmotionCache();
@@ -22,7 +24,9 @@ function MyApp({
   clientSideEmotionCache,
 }) {
   const getLayout = Component.getLayout ?? ((page) => page);
+  const store = useStore();
   return (
+    <PersistGate persistor={store.__PERSISTOR} loading={null}>
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
 
@@ -30,7 +34,8 @@ function MyApp({
       </ThemeProvider>
 
     </CacheProvider>
+    </PersistGate>
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp)
