@@ -30,7 +30,7 @@ const Patients = () => {
             className="m-3 w-[240px] md:w-[366px] h-[3em]  rounded-lg border-size-[2px] text-sm md:text-xl text-semibold"
             sx={{
               // color: theme.palette.textBlack.main,
-              borderWidth: "2px",
+              borderWidth: "1px",
               borderColor:
                 id === selectedPatient
                   ? theme.palette.primary.main
@@ -51,7 +51,7 @@ const Patients = () => {
             router.push("/patients/new");
           }}
           sx={{
-            borderWidth: "2px",
+            borderWidth: "1px",
             borderColor: theme.palette.border.main,
           }}
         >

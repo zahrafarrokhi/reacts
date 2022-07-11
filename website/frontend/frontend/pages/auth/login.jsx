@@ -94,7 +94,7 @@ const Login = (props) => {
         </ToggleButtonGroup>
       </div>
 
-      <div className="flex flex-row justify-around m-[20px] py-10">
+      <div className="flex flex-row justify-around m-[20px] ">
         <div className="flex flex-col items-center py-3  w-full ">
           <div className="items-right">
             <InputLabel

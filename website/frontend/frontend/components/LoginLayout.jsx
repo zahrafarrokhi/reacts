@@ -14,13 +14,14 @@ const LoginLayout = (props) => {
     //overflow-y-auto overflow-x-hidden
     //bg-background
 
-    
     <div className="flex flex-col items-center  h-full justify-center min-h-screen  overflow-y-auto overflow-x-hidden bg-background  w-full fixed">
       {/* // flex flex-col  w-[80%] h-[33rem] or h-auto desktop=> relative, mobile=> absoulte*/}
-      
-      <div className="flex flex-col  h-auto md:max-w-[65%] md:w-full bg-white drop-shadow-lg 
-       md:rounded-b-[16px] rounded-[16px] border-[#f4f5f8] absolute top-[17%] left-[5%]
-      right-[5%] md:relative md:top-[0] md:left-0 md:right-0">
+
+      <div
+        className="flex flex-col min-h-[85%] md:min-h-min  md:h-auto md:max-w-[65%] md:w-full bg-white drop-shadow-lg rounded-[16px]  rounded-b-none
+       md:rounded-b-[16px] border-[#f4f5f8] absolute top-[20%] left-[5%]
+      right-[5%] md:relative md:top-[0] md:left-0 md:right-0"
+      >
         {/* absolute mobile =>  top-[10px] left-[10px], desktop =>md:top-[20px] md:left-[20px] */}
         <ArrowBackRoundedIcon
           className={

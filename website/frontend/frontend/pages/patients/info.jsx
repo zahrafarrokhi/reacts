@@ -260,7 +260,7 @@ function PatientInfo(props) {
                 flex: "1 0 90%",
               },
             }}
-            className="m-1 my-4"
+            className="m-3 my-4"
           >
             <FormLabel
               sx={{

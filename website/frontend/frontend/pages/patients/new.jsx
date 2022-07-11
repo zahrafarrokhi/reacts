@@ -91,17 +91,21 @@ const NewPatient = () => {
             color: theme.palette.textBlack.main,
             width: "100%",
             textAlign: "right",
-            marginBottom: 1 / 2,
+            marginBottom: .5,
           }}
         >
           تاریخ تولد
         </InputLabel>
+        <div className="w-[240px]">
         <DatePicker
           value={birthdate}
           onChange={setBirthDate}
           btnRef={btnRef}
+          
           editable
         />
+        </div>
+       
       </div>
       <div className="flex flex-row items-center justify-center  mt-20 mb-20">
         <Button
