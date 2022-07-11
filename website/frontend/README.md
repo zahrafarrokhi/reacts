@@ -808,3 +808,11 @@ const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 </SwipeableDrawer>
 ```
 
+#### redux
+```jsx
+npm i redux react-redux
+next => npm i next-redux-wrapper
+async func => npm i redux-thunk @reduxjs/toolkit
+persist => npm i redux-persist
+```
+
