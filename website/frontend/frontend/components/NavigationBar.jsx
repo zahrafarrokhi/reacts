@@ -18,7 +18,6 @@ import TransactionsIcon from "../icons/TransactionsIconBlue.svg";
 import ProfileIcon from "../icons/ProfileIconBlue.svg";
 // import DoctorReportIcon from "../icons/DoctorReport.svg";
 
-
 //navs
 const navs = [
   [
@@ -104,7 +103,7 @@ function NavigationBar(props) {
         },
       }}
     >
-      <div className="flex flex-col justify-between w-full py-10 flex-grow border-0 border-l-2 border-solid border-lightgray">
+      <div className="flex flex-col justify-between py-10 flex-grow border-0 border-l-2 border-solid border-lightgray">
         <div className="flex flex-col">
           {navs.map((navin) => (
             <>
