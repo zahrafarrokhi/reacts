@@ -25,6 +25,7 @@ function MyApp({
 }) {
   const getLayout = Component.getLayout ?? ((page) => page);
   const store = useStore();
+  setupInterceptors(store);
   return (
     <PersistGate persistor={store.__PERSISTOR} loading={null}>
     <CacheProvider value={emotionCache}>

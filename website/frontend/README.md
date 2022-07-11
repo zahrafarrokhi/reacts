@@ -873,3 +873,11 @@ function MyApp(...) {
 export default wrapper.withRedux(MyApp)
 
 ```
+##### install axios
+
+```jsx
+npm i axios axios-auth-refresh
+lib/axios.js
+//_app.js
+setupInterceptors(store);
+```

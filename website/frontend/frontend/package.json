@@ -17,6 +17,8 @@
     "@mui/material": "^5.8.6",
     "@reduxjs/toolkit": "^1.8.3",
     "@svgr/webpack": "^6.2.1",
+    "axios": "^0.27.2",
+    "axios-auth-refresh": "^3.3.1",
     "moment-jalaali": "^0.9.6",
     "next": "12.2.0",
     "next-redux-wrapper": "^7.0.5",
