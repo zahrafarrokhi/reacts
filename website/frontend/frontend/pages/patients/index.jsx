@@ -64,6 +64,7 @@ const Patients = () => {
           className="w-[240px] md:w-[400px] h-[3.2em] rounded-[10px] p-3 text-lg"
           color="primary"
           // onClick={() => handleSubmit()}
+          //validation
           disable={!selectedPatient}
         >
           مرحله بعد
