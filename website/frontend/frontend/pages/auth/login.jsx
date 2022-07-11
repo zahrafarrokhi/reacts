@@ -11,6 +11,7 @@ import {
   ToggleButtonGroup,
   ToggleButton,
 } from "@mui/material";
+import { useMemo } from "react";
 
 const Login = (props) => {
   // ToggleButtonGroup,ToggleButton,InputLabel
@@ -18,6 +19,24 @@ const Login = (props) => {
   // TextField
   const [value, setValue] = useState();
   const theme = useTheme();
+  //error
+
+  const validationError = useMemo(() => {
+    if (!value)return false
+    if (state === "phonenumber") {
+      return !/^09\d{9}$/g.test(value);
+    } else {
+      return !/^\w+@\w+.\w+$/g.test(value);
+    }
+  }, [value, state]);
+  
+  const helperText = useMemo(() => {
+    if (validationError) {
+      return state === "phonenumber"
+        ? "تلفن خود را وارد کنید"
+        : "ایمیل خود را وارد کنید";
+    }
+  }, [value, state, validationError]);
 
   const submit = async () => {};
   const handleSubmitWithEnter = (e) => {
@@ -114,11 +133,12 @@ const Login = (props) => {
               id="loginInput"
               autoFocus
               className="w-full sm:w-auto"
-              // error={err}
+              error={validationError}
+              helperText={helperText}
               variant="outlined"
               value={value}
               // onChange={(e) => setValue(e.target.value)}
-              onChange={() =>
+              onChange={(e) =>
                 setValue(
                   state === "phonenumber"
                     ? preventLettersTyping(
@@ -131,12 +151,16 @@ const Login = (props) => {
                 maxLength: state === "phonenumber" ? 11 : undefined,
                 inputMode: state === "phonenumber" ? "numeric" : "email",
               }}
-              inputMode={state === "phonenumber" ? "numeric" : "email"}
               placeholder={
                 state === "phonenumber" ? "09*********" : "email@example.com"
               }
               onKeyDown={(e) => handleSubmitWithEnter(e)}
-              sx={{ width: "100%" }}
+              sx={{
+                width: "100%",
+                "& > .MuiFormHelperText-root": {
+                  textAlign: "right",
+                },
+              }}
             />
           </div>
         </div>
