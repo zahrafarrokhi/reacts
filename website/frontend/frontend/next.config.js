@@ -2,6 +2,14 @@
 const path = require('path');
 
 const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*/',
+        destination: `${process.env.BACKEND_BASE_URL}/api/:path*/`,
+      },
+    ];
+  },
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'node_modules')],
