@@ -917,3 +917,33 @@ export const setupInterceptors = (store) => {
 export default axiosInstance;
 
 ```
+#### addd backend
+`next.config.js`
+```jsx
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*/',
+        destination: `${process.env.BACKEND_BASE_URL}/api/:path*/`,
+      },
+    ];
+  },
+  .
+  .
+  .
+  }
+```
+`url backend`
+```jsx
+//ivisit/urls.py
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/auth/',include('authentication.urls')),
+    path('api/data/', include('constant_data.urls')),
+    path('api/patients/', include('patients.urls')),
+    # path('api/visits/', include('visits.urls')),
+    # path('api/doctors/', include('doctors.urls')),
+]
+
+```
