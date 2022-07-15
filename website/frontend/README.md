@@ -952,3 +952,4 @@ urlpatterns = [
 BACKEND_BASE_URL=http://localhost:8000
 JWT_AUTH_HEADER=Bearer
 ```
+
