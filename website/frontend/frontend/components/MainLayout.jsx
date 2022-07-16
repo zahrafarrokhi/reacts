@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
-import NavigationBar from './NavigationBar';
-import Header from './Header';
+import NavigationBar from "./NavigationBar";
+import Header from "./Header";
+import MobileFooter from "./MobileFooter";
 
 const MainLayout = (props) => {
   const [open, setOpen] = useState(false);
@@ -13,9 +14,11 @@ const MainLayout = (props) => {
       </aside>
       {/* Header,main */}
       <div className="flex flex-col flex-grow overflow-hidden">
-      {/* ? */}
-      <Header openNavBar={() => setOpen(true)} />
-        <main >{children}</main>
+        {/* ? */}
+        <Header openNavBar={() => setOpen(true)} />
+        <main>{children}</main>
+        {/*md:hidden MobileFooter */}
+        <MobileFooter />
       </div>
     </div>
   );

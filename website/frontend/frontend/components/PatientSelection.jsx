@@ -63,6 +63,17 @@ function PatientSelection() {
           "& > .MuiPaper-root": {
             width: "200px",
             borderRadius: "1em",
+            //mobile
+            [theme.breakpoints.down("md")]: {
+              position: "fixed",
+              width: "auto",
+              bottom: "0 !important",
+              left: "5% !important",
+              right: "5% !important",
+              top: "unset !important",
+              borderBottomLeftRadius: "0",
+              borderBottomRightRadius: "0",
+            },
           },
         }}
       >
