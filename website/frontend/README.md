@@ -1062,7 +1062,7 @@ export default MainLayout;
 // <Header openNavBar={() => setOpen(true)} />
 //Header
 // <CgMenuGridR onClick={openNavBar}/>
-   
+
 import { CgMenuGridR } from "react-icons/cg";
 
 const Header = (props) => {
@@ -1084,4 +1084,75 @@ const Header = (props) => {
 export default Header;
 
 
+```
+
+#### Layout mobile
+
+`components/Header.jsx`
+`components/MainLayout.jsx => add <MobileFooter/>`
+`components/MobileFooter.jsx`
+`components/NavigationBar.jsx`
+`components/PatientSelection.jsx`
+
+```jsx
+
+//desktop
+const Header = (props) => {
+  const { openNavBar } = props;
+  return (
+    <nav
+      className={`flex flex-row-reverse items-center  h-[65px] p-1 md:pl-20 md:h-[70px] border-0 border-b border-solid border-lightgray`}
+    >
+      <PatientSelection />
+      <div className="flex md:hidden ">
+        {/* <MainIcon alt="کینیک غدد" className='md:justify-self-center md:self-center ' /> */}
+      </div>
+      <div className="d-flex flex-row mr-0 md:mr-[1em]">
+        <NotificationComponent />
+        <CgMenuGridR className="flex md:hidden " onClick={openNavBar} />
+      </div>
+    </nav>
+  );
+};
+export default Header;
+//mobile and desktop
+- components/Header.jsx
+
+//components/NavigationBar.jsx
+ {
+      name: "پزشکان",
+      className: "hidden md:flex",
+ },
+ {
+      name: "داروخانه‌",
+      className: "hidden md:flex",
+ },
+ {
+      name: "آزمایشگاه",
+      className: "hidden md:flex",
+ },
+ [theme.breakpoints.down("md")]: {
+
+            margin: "0 10px",
+ },
+ <PatientSelection/>
+ //add  ${nav.className}
+ <Link key={nav.name} href={nav.link}>
+    <a className={`${nav.path.test(router.asPath)? " ": " "} ${nav.className}`} > </a>
+   
+</Link>
+<Divider className="w-[60%] self-center first-of-type:hidden md:first-of-type:flex" />
+
+//components/PatientSelection.jsx
+//Menu
+[theme.breakpoints.down("md")]: {
+              position: "fixed",
+              width: "auto",
+              bottom: "0 !important",
+              left: "5% !important",
+              right: "5% !important",
+              top: "unset !important",
+              borderBottomLeftRadius: "0",
+              borderBottomRightRadius: "0",
+            },
 ```

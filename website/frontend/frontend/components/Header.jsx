@@ -10,8 +10,10 @@ const Header = (props) => {
     //style
     //justify-between md:justify-start
     <nav
-    className={`flex flex-row-reverse items-center justify-between md:justify-start h-[65px] p-1 md:pl-20 md:h-[70px] border-0 border-b border-solid border-lightgray`}    >
+      className={`flex flex-row-reverse items-center justify-between md:justify-start h-[65px] p-1 md:pl-20 md:h-[70px] border-0 border-b border-solid border-lightgray`}    >
+      {/* PatientSelection => mobile and desktop*/}
       <PatientSelection className={``} />
+      {/* mobile */}
       <div className={`flex md:hidden  `}>
         <MainIcon
           alt="کینیک غدد"
@@ -22,6 +24,7 @@ const Header = (props) => {
         className={`flex flex-row items-center justify-center mr-0 md:mr-[1em]`}
       >
         <div>
+          {/* mobile */}
           {" "}
           <CgMenuGridR
             className={`flex md:hidden w-[1.5rem] h-[1.5rem] m-1`}
@@ -30,6 +33,7 @@ const Header = (props) => {
         </div>
 
         <div>
+          {/* NotificationComponent => mobile and desktop*/}
           {" "}
           <NotificationComponent />
         </div>
