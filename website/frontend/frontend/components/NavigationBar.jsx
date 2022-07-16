@@ -16,6 +16,7 @@ import SupportIcon from "../icons/SupportIconBlue.svg";
 import VisitsIcon from "../icons/VisitsIconBlue.svg";
 import TransactionsIcon from "../icons/TransactionsIconBlue.svg";
 import ProfileIcon from "../icons/ProfileIconBlue.svg";
+import PatientSelection from "./PatientSelection";
 // import DoctorReportIcon from "../icons/DoctorReport.svg";
 
 //navs
