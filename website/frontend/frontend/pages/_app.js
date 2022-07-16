@@ -14,7 +14,9 @@ import createEmotionCache from '../lib/createEmotionCache';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider } from '@mui/system';
 import { useStore } from 'react-redux';
-import { wrapper } from '../lib/store'
+import { wrapper } from '../lib/store';
+import { setupInterceptors } from '../lib/axios';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
 const clientSideEmotionCache = createEmotionCache();
