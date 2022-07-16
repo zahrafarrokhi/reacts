@@ -28,6 +28,7 @@ const navs = [
       path: /^\/$/g,
       //?
       icon: (props) => <Doctors {...props} className={`${props.className}`} />,
+      className: "hidden md:flex",
     },
     {
       name: "داروخانه‌",
@@ -39,12 +40,14 @@ const navs = [
           className={`${props.className} w-[2rem] h-[1rem]`}
         />
       ),
+      className: "hidden md:flex",
     },
     {
       name: "آزمایشگاه",
       link: "/laboratory",
       path: /^\/laboratory/g,
       icon: Laboratory,
+      className: "hidden md:flex",
     },
   ],
   [
@@ -96,6 +99,7 @@ function NavigationBar(props) {
           [theme.breakpoints.down("md")]: {
             borderTopLeftRadius: "1em",
             borderTopRightRadius: "1em",
+            margin: "0 10px",
           },
           [theme.breakpoints.up("md")]: {
             width: "240px",
@@ -117,7 +121,7 @@ function NavigationBar(props) {
                 nav.path.test(router.asPath)
                   ? "text-primary [&>*]:text-primary [&>*>*]:text-primary [&>*>*>*]:text-primary stroke-primary [&>*]:stroke-primary [&>*>*]:stroke-primary [&>*>*>*]:stroke-primary fill-primary [&>*]:fill-primary [&>*>*]:fill-primary [&>*>*>*]:fill-primary "
                   : "text-black [&>*]:text-black [&>*>*]:text-black [&>*>*>*]:text-black stroke-black [&>*]:stroke-black [&>*>*]:stroke-black [&>*>*>*]:stroke-black  fill-black [&>*]:fill-black [&>*>*]:fill-black [&>*>*>*]:fill-black "
-              } `}
+              } ${nav.className} `}
                   >
                     {nav.path.test(router.asPath)}
                     <nav.icon className="text-xs w-[1rem] h-[1rem]  [&>*]:stroke-[0.3px] stroke-[0.3px] mr-4 ml-2" />
@@ -125,13 +129,13 @@ function NavigationBar(props) {
                   </a>
                 </Link>
               ))}
-              <Divider className="w-[60%] self-center " />
+              <Divider className="w-[60%] self-center first-of-type:hidden md:first-of-type:flex" />
             </>
           ))}
         </div>
         {/* exit */}
         <Link href="/auth/login">
-          <a className="flex flex-row m-1 p-2 text-black no-underline mb-12">
+          <a className="flex flex-row m-1 p-2 text-black no-underline mb-8 md:mb-12">
             <IoLogOutOutline className="m-1 text-danger" />
             {/* <IoLogOutOutline className="m-1 text-danger [&>*]:text-danger [&>*>*]:text-danger [&>*>*>*]:text-danger stroke-danger [&>*]:stroke-danger [&>*>*]:stroke-danger [&>*>*>*]:stroke-danger  " /> */}
             خروج از حساب کاربری
