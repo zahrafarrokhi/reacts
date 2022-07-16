@@ -109,6 +109,7 @@ function NavigationBar(props) {
     >
       <div className="flex flex-col justify-between py-10 flex-grow border-0 border-l-2 border-solid border-lightgray">
         <div className="flex flex-col">
+        <PatientSelection/>
           {navs.map((navin) => (
             <>
               {navin.map((nav) => (
