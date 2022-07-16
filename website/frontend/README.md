@@ -1089,7 +1089,7 @@ export default Header;
 
 
 ```
-<<<<<<< HEAD
+
 
 #### Layout mobile
 
@@ -1161,5 +1161,3 @@ export default Header;
               borderBottomRightRadius: "0",
             },
 ```
-=======
->>>>>>> d10a94c9be6a7b4c6dc1b7d2161f7b62b910066b
