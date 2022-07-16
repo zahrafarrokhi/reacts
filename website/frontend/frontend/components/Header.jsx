@@ -12,12 +12,6 @@ const Header = (props) => {
     <nav
       className={`flex flex-row-reverse items-center justify-between md:justify-start h-[65px] p-1 md:pl-20 md:h-[70px] border-0 border-b border-solid border-lightgray`}
     >
-      {/* PatientSelection => mobile and desktop*/}
-      <PatientSelection className={``} />
-      {/* mobile */}
-      className=
-      {`flex flex-row-reverse items-center justify-between md:justify-start h-[65px] p-1 md:pl-20 md:h-[70px] border-0 border-b border-solid border-lightgray`}{" "}
-    
       <PatientSelection className={``} />
       <div className={`flex md:hidden  `}>
         <MainIcon
