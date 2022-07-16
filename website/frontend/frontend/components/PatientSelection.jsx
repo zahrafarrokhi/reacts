@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Divider,
@@ -7,35 +8,43 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-
-// import { loadPatients } from "../lib/slices/patients";
 import { HiPlus } from "react-icons/hi";
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { loadPatients, loginAsPatient } from "../lib/slices/patients";
 
 function PatientSelection() {
-  // const dispatch = useDispatch();
-  const patients = [
-    {
-      first_name: "a",
-      last_name: "b",
-    },
-    {
-      first_name: "a1",
-      last_name: "b1",
-    },
-  ];
+  const [open, setOpen] = useState(false);
+  //?
+  const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  //redux
+  const patients = useSelector((state) => state.patientReducer?.patients);
+  const patient = useSelector((state) => state.patientReducer?.patient);
+  const dispatch = useDispatch();
+
+  // const patients = [
+  //   {
+  //     first_name: "a",
+  //     last_name: "b",
+  //   },
+  //   {
+  //     first_name: "a1",
+  //     last_name: "b1",
+  //   },
+  // ];
+
+  //loadPatients
   const loadData = async () => {
-    // await dispatch(loadPatients()).unwrap();
+    await dispatch(loadPatients()).unwrap();
   };
   useEffect(() => {
     loadData();
   }, []);
-  // const patients = useSelector((state) => state.patientReducer?.patients);
-  const [open, setOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const theme = useTheme();
+  //loginAsPatient
+  const loginPatient = (id) => {
+    dispatch(loginAsPatient(id));
+  };
 
   const toggleMenu = (e) => {
     if (open) {
@@ -50,12 +59,17 @@ function PatientSelection() {
   return (
     <Button
       variant="text"
-      // color="black"
-      className={`flex flex-row  relative`}
+      color="textBlack"
+      className={`flex flex-row  relative justify-start mx-8 text-ellipsis whitespace-nowrap w-[5ch]`}
       onClick={(e) => toggleMenu(e)}
     >
       Test
+      {/* {`${patient.first_name} ${patient.last_name}`} */}
+
       <Menu
+        //Menu 
+        //MenuItem
+        //ListItemText and ListItemIcon
         anchorEl={anchorEl}
         open={open}
         handleClose={toggleMenu}
@@ -78,7 +92,11 @@ function PatientSelection() {
         }}
       >
         {patients?.map((p) => (
-          <MenuItem>
+          <MenuItem
+            onClick={() => {
+              loginPatient(p.id);
+            }}
+          >
             <ListItemText inset>
               {p.first_name} {p.last_name}
             </ListItemText>
@@ -89,7 +107,9 @@ function PatientSelection() {
           <ListItemIcon>
             <HiPlus className="text-primary text-lg" />
           </ListItemIcon>
-          <ListItemText>بیمار جدید</ListItemText>
+          <ListItemText onClick={(e) => {              
+              router.push('/patients/new');
+            }}>بیمار جدید</ListItemText>
         </MenuItem>
       </Menu>
     </Button>
@@ -97,4 +117,3 @@ function PatientSelection() {
 }
 
 export default PatientSelection;
-
