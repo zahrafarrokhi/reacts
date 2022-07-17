@@ -13,9 +13,11 @@ import { HiPlus } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPatients, loginAsPatient } from "../lib/slices/patients";
 
-function PatientSelection() {
+function PatientSelection(props) {
+  const { onOpen } = props;
   const [open, setOpen] = useState(false);
-  //?
+  // Anchor that points(ref) to button
+  // used to position the menu below the button
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
   //redux
@@ -52,9 +54,11 @@ function PatientSelection() {
     if (open) {
       setOpen(false);
       setAnchorEl(null);
+      if (onOpen) onOpen(false);
     } else {
       setOpen(true);
       setAnchorEl(e.target);
+      if (onOpen) onOpen(true);
     }
   };
 
