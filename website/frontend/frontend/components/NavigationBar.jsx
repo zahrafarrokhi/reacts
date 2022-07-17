@@ -92,7 +92,8 @@ function NavigationBar(props) {
       anchor={isMobile ? "bottom" : "right"}
       open={isOpen}
       onClose={willClose}
-      //?
+      // temperory will show/hide based on open state, position: fixed/absolute
+      // permanent will always show: position: relative
       variant={isMobile ? "temporary" : "permanent"}
       sx={{
         "& .MuiDrawer-paper": {
