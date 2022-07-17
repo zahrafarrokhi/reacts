@@ -21,7 +21,9 @@ function PatientSelection() {
   //redux
   const patients = useSelector((state) => state.patientReducer?.patients);
   const patient = useSelector((state) => state.patientReducer?.patient);
+  const user = useSelector((state) => state.authReducer?.me);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   // const patients = [
   //   {
@@ -61,10 +63,14 @@ function PatientSelection() {
       variant="text"
       color="textBlack"
       className={`flex flex-row  relative justify-start mx-8 text-ellipsis whitespace-nowrap w-[5ch]`}
-      onClick={(e) => toggleMenu(e)}
+      onClick={(e) => {
+        if(patients && patients?.length > 0) toggleMenu(e)
+        else if (!user) router.push('/auth/login');
+        else rouetr.push('/patients/new');
+      }}
     >
-      Test
-      {/* {`${patient.first_name} ${patient.last_name}`} */}
+      {/*Test*/}
+    {patient ? `${patient?.first_name} ${patient?.last_name}` : 'ورود'} 
 
       <Menu
         //Menu 
