@@ -63,6 +63,7 @@ function PatientSelection(props) {
   };
 
   return (
+    <>
     <Button
       variant="text"
       color="textBlack"
@@ -76,7 +77,9 @@ function PatientSelection(props) {
       {/*Test*/}
     {patient ? `${patient?.first_name} ${patient?.last_name}` : 'ورود'} 
 
-      <Menu
+     
+    </Button>
+ <Menu
         //Menu 
         //MenuItem
         //ListItemText and ListItemIcon
@@ -105,6 +108,8 @@ function PatientSelection(props) {
           <MenuItem
             onClick={() => {
               loginPatient(p.id);
+          //close menu
+              toggleMenu();
             }}
           >
             <ListItemText inset>
@@ -122,7 +127,7 @@ function PatientSelection(props) {
             }}>بیمار جدید</ListItemText>
         </MenuItem>
       </Menu>
-    </Button>
+</>
   );
 }
 
