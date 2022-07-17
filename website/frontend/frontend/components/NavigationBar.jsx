@@ -83,6 +83,9 @@ const navs = [
   ],
 ];
 function NavigationBar(props) {
+// This props is used to hide NavigationBar when PatientSeletion opens
+  const [patientOpen, setPatientOpen] = useState(false);
+  //
   const { isOpen, willClose } = props;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -102,6 +105,8 @@ function NavigationBar(props) {
             borderTopLeftRadius: "1em",
             borderTopRightRadius: "1em",
             margin: "0 10px",
+            // This props is used to hide NavigationBar when PatientSeletion opens
+            top: patientOpen ? "100%" : undefined,
           },
           [theme.breakpoints.up("md")]: {
             width: "240px",
@@ -111,7 +116,9 @@ function NavigationBar(props) {
     >
       <div className="flex flex-col justify-between py-10 flex-grow border-0 border-l-2 border-solid border-lightgray">
         <div className="flex flex-col">
-        <PatientSelection/>
+         <div className="flex md:hidden">
+            <PatientSelection onOpen={setPatientOpen} />
+          </div>
           {navs.map((navin) => (
             <>
               {navin.map((nav) => (
