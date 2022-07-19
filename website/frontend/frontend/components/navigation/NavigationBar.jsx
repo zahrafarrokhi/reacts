@@ -9,13 +9,13 @@ import {
 } from "@mui/material";
 import { IoLogOutOutline } from "react-icons/io5";
 //svg icon
-import Doctors from "../icons/DoctorsBlue.svg";
-import Laboratory from "../icons/LaboratoryBlue.svg";
-import Pharmacy from "../icons/Pharmacy.svg";
-import SupportIcon from "../icons/SupportIconBlue.svg";
-import VisitsIcon from "../icons/VisitsIconBlue.svg";
-import TransactionsIcon from "../icons/TransactionsIconBlue.svg";
-import ProfileIcon from "../icons/ProfileIconBlue.svg";
+import Doctors from "../../icons/DoctorsBlue.svg";
+import Laboratory from "../../icons/LaboratoryBlue.svg";
+import Pharmacy from "../../icons/Pharmacy.svg";
+import SupportIcon from "../../icons/SupportIconBlue.svg";
+import VisitsIcon from "../../icons/VisitsIconBlue.svg";
+import TransactionsIcon from "../../icons/TransactionsIconBlue.svg";
+import ProfileIcon from "../../icons/ProfileIconBlue.svg";
 import PatientSelection from "./PatientSelection";
 // import DoctorReportIcon from "../icons/DoctorReport.svg";
 

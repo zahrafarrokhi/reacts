@@ -9,13 +9,15 @@ import {
   useTheme,
 } from "@mui/material";
 import { HiPlus } from "react-icons/hi";
+import { useRouter } from 'next/router';
 //redux
 import { useDispatch, useSelector } from "react-redux";
-import { loadPatients, loginAsPatient } from "../lib/slices/patients";
+import { loadPatients, loginAsPatient } from "../../lib/slices/patients";
 
 function PatientSelection(props) {
   const { onOpen } = props;
   const [open, setOpen] = useState(false);
+  
   // Anchor that points(ref) to button
   // used to position the menu below the button
   const [anchorEl, setAnchorEl] = useState(null);
@@ -71,7 +73,7 @@ function PatientSelection(props) {
       onClick={(e) => {
         if(patients && patients?.length > 0) toggleMenu(e)
         else if (!user) router.push('/auth/login');
-        else rouetr.push('/patients/new');
+        else router.push('/patients/new');
       }}
     >
       {/*Test*/}

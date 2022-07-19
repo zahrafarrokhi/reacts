@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Doctors from "../icons/DoctorsBlue.svg";
-import Laboratory from "../icons/LaboratoryBlue.svg";
-import VisitsIcon from "../icons/VisitsIconBlue.svg";
+import Doctors from "../../icons/DoctorsBlue.svg";
+import Laboratory from "../../icons/LaboratoryBlue.svg";
+import VisitsIcon from "../../icons/VisitsIconBlue.svg";
 
 //style
 //md:hidden  justify-between fixed bottom-[30px] left-[5%] right-[5%] h-[60px]

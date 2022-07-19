@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import NotificationComponent from "./NotificationComponent";
 import PatientSelection from "./PatientSelection";
-import MainIcon from "../icons/main-icon-big.svg";
+import MainIcon from "../../icons/main-icon-big.svg";
 
 const Header = (props) => {
   const { openNavBar } = props;

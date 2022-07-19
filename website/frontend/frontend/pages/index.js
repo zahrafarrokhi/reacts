@@ -1,5 +1,5 @@
 import Head from "next/head";
-import MainLayout from "../components/MainLayout";
+import MainLayout from "../components/navigation/MainLayout";
 
 export default function Home() {
   return (
