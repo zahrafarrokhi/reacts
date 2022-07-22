@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const path = require('path');
 
 const nextConfig = {
@@ -6,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*/',
-        destination: `${process.env.BACKEND_BASE_URL}/api/:path*/`,
+        destination: ${process.env.BACKEND_BASE_URL}/api/:path*/,
       },
     ];
   },
@@ -19,7 +18,7 @@ const nextConfig = {
     // your application
     locales: ['ar'],
     // This is the default locale you want to be used when visiting
-    // a non-locale prefixed path e.g. `/hello`
+    // a non-locale prefixed path e.g. /hello
     defaultLocale: 'ar',
     // This is a list of locale domains and the default locale they
     // should handle (these are only required when setting up domain routing)
@@ -35,27 +34,32 @@ const nextConfig = {
   poweredByHeader: false,
   inlineImageLimit: false,
   webpack: (config) => {
+    const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test('.svg'))
+    fileLoaderRule.exclude = /\.svg$/
     config.module.rules.push({
       test: /\.svg$/,
       issuer: {
         and: [/\.(js|ts)x?$/],
         // test: /\.(js|ts)x?$/,
       },
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            prettier: false,
-            svgo: true,
-            titleProp: true,
-          },
-        },
-      ],
+      use: [require.resolve('@svgr/webpack')],
+      // use: ['@svgr/webpack'],
+      // use: [
+      //   {
+      //     loader: require.resolve('@svgr/webpack'),
+      //     options: {
+      //       prettier: false,
+      //       svgo: true,
+      //       svgoConfig: { plugins: [{ removeViewBox: false }] },
+      //       titleProp: true,
+      //     },
+      //   },
+      // ],
     });
+
     return config;
   },
 
 };
 
 module.exports = nextConfig;
-
