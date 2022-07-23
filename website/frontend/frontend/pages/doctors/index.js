@@ -26,10 +26,10 @@ const doctors = [
     id: 3,
     fname:"c"
   },
-  // {
-  //   id: 4,
-  //   fname:"d"
-  //   },
+  {
+    id: 4,
+    fname:"d"
+    },
 ]
 const Doctors = () => {
   const [departments, setdepartments] = useState(
@@ -91,13 +91,13 @@ const Doctors = () => {
           placeholder="جستجو..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          //? InputAdornment
+          //? InputAdornment => div 
           InputProps={{
             startAdornment: <InputAdornment><AiOutlineSearch className="w-6 mr-2 h-7 rotate-90" /></InputAdornment>,
           }}
         />
       </div>
-      <div className="flex flex-wrap justify-start px-2 py-2">
+      <div className="flex flex-wrap justify-start px-2 py-2 ">
         {/* {
           doctors?.map((doctor) =>
           (doctor.fname)

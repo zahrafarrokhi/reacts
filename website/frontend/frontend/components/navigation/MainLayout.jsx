@@ -7,7 +7,7 @@ const MainLayout = (props) => {
   const [open, setOpen] = useState(false);
   const { children } = props;
   return (
-    <div className="flex flex-row w-full relative h-full bg-white  overflow-y-auto">
+    <div className="flex flex-row w-full relative h-full bg-white">
       {/* aside*/}
       <aside className="hidden md:flex flex-col basis-[240px] flex-shrink-0">
         <NavigationBar isOpen={open} willClose={() => setOpen(false)} />
@@ -16,7 +16,7 @@ const MainLayout = (props) => {
       <div className="flex flex-col flex-grow overflow-hidden">
         {/* ? */}
         <Header openNavBar={() => setOpen(true)} />
-        <main>{children}</main>
+        <main className="overflow-y-auto">{children}</main>
         {/*md:hidden MobileFooter */}
         <MobileFooter />
       </div>
