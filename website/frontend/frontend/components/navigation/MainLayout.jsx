@@ -9,7 +9,7 @@ const MainLayout = (props) => {
   return (
     <div className="flex flex-row w-full relative h-full bg-white  overflow-y-auto">
       {/* aside*/}
-      <aside className="hidden md:flex flex-col basis-[240px]">
+      <aside className="hidden md:flex flex-col basis-[240px] flex-shrink-0">
         <NavigationBar isOpen={open} willClose={() => setOpen(false)} />
       </aside>
       {/* Header,main */}

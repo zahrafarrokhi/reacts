@@ -47,22 +47,40 @@ export default function DepartmentTabBar(props) {
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box
+          sx={{
+            borderBottom: 1,
+            borderColor: "divider",
+            margin: "0.5em",
+            padding: "1em",
+          }}
+        >
           <TabList
             sx={{
               [theme.breakpoints.down("md")]: {
+                "& .MuiTabs-flexContainer": {
+                  display: "flex",
+                  gap: "0.5em",
+                },
                 "& .MuiTabs-indicator": {
                   backgroundColor: "transparent",
                   borderRadius: "4px",
-                  border: "1px solid #eeee",
-                  height: "100%",
+                  border: `2px solid ${theme.palette.primary.main}`,
+                  height: "calc(4em + 9px)",
+                  width: "110px !important",
+                  transform: "translateX(-2px)",
+                  // bottom: "3px",
+
+                  // margin: "auto 0",
+                },
+                "& .Mui-selected": {
+                  // height: "4rem",
+                  // backgroundColor: "red",
+                  // paddingX: "auto",
                 },
               },
-             
             }}
             scrollButtons={false}
-
-
             variant="scrollable"
             onChange={handleChange}
             aria-label="lab API tabs example"
@@ -70,19 +88,14 @@ export default function DepartmentTabBar(props) {
             <Tab
               sx={{
                 [theme.breakpoints.down("md")]: {
-                  "& .MuiTabs-indicator": {
-                    backgroundColor: "transparent",
-                    borderRadius: "4px",
-                    border: "1px solid #eeee",
-                    height: "100%",
-                    padding:"4px"
-                  },
-                  "&:hover": {
-                    height: "4rem",
-                    backgroundColor: "#e5e5e5",
-                    paddingX:"auto"
-                  }
-                 
+                  backgroundColor: theme.palette.lightgray.main,
+                  margin: "0 0",
+                  width: "110px",
+                  borderRadius: "4px",
+                  // border: "1px solid #eeee",
+                  height: "4em",
+                  margin: "3px",
+                  // padding: "4px",
                 },
               }}
               icon={<PhoneIcon className="md:hidden h-4 m-4" />}
@@ -93,18 +106,14 @@ export default function DepartmentTabBar(props) {
             <Tab
               sx={{
                 [theme.breakpoints.down("md")]: {
-                  "& .MuiTabs-indicator": {
-                    backgroundColor: "transparent",
-                    borderRadius: "4px",
-                    border: "1px solid #eeee",
-                    height: "100%",
-                    padding:"4px"
-                  
-                  },
-                  "&:hover":{ height: "4rem",
-                  backgroundColor: "#e5e5e5",
-                  paddingX:"auto"}
-                 
+                  backgroundColor: theme.palette.lightgray.main,
+                  margin: "0 0",
+                  width: "110px",
+                  borderRadius: "4px",
+                  // border: "1px solid #eeee",
+                  height: "4em",
+                  margin: "3px",
+                  // padding: "4px",
                 },
               }}
               icon={<PhoneIcon className="md:hidden h-4 m-4" />}
@@ -115,18 +124,15 @@ export default function DepartmentTabBar(props) {
             <Tab
               sx={{
                 [theme.breakpoints.down("md")]: {
-                  "& .MuiTabs-indicator": {
-                    backgroundColor: "transparent",
-                    borderRadius: "4px",
-                    border: "1px solid #eeee",
-                    height: "100%",
-                    padding:"4px"
-                  },
-                  "&:hover":{ height: "4rem",
-                  backgroundColor: "#e5e5e5",
-                  paddingX:"auto"}
+                  backgroundColor: theme.palette.lightgray.main,
+                  margin: "0 0",
+                  width: "110px",
+                  borderRadius: "4px",
+                  // border: "1px solid #eeee",
+                  height: "4em",
+                  margin: "3px",
+                  // padding: "4px",
                 },
-              
               }}
               icon={<PhoneIcon className="md:hidden h-4 m-4" />}
               iconPosition="bottom"
@@ -136,18 +142,15 @@ export default function DepartmentTabBar(props) {
             <Tab
               sx={{
                 [theme.breakpoints.down("md")]: {
-                  "& .MuiTabs-indicator": {
-                    backgroundColor: "transparent",
-                    borderRadius: "4px",
-                    border: "1px solid #eeee",
-                    height: "100%",
-                    padding:"4px"
-                  },
-                  "&:hover":{ height: "4rem",
-                  backgroundColor: "#e5e5e5",
-                  paddingX:"auto"}
+                  backgroundColor: theme.palette.lightgray.main,
+                  margin: "0 0",
+                  width: "110px",
+                  borderRadius: "4px",
+                  // border: "1px solid #eeee",
+                  height: "4em",
+                  margin: "3px",
+                  // padding: "4px",
                 },
-
               }}
               icon={<PhoneIcon className="md:hidden h-4 m-4" />}
               iconPosition="bottom"
