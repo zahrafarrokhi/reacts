@@ -5,8 +5,8 @@ import { TextField, InputAdornment } from '@mui/material';
 //
 import { AiOutlineSearch } from 'react-icons/ai';
 // import Circle from '../../icons/Circle.svg';
-import DepartmentTabBar from '../../components/DepartmentTabBar'
-import DoctorItem from '../../components/DoctorItem';
+import DepartmentTabBar from '../../components/doctors/DepartmentTabBar'
+import DoctorItem from '../../components/doctors/DoctorItem';
 // import { useDispatch, useSelector } from 'react-redux';
 // import axios from '../../lib/axios';
 // import { loadDoctors } from '../../lib/slices/doctors';

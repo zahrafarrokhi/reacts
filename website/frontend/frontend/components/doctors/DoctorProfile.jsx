@@ -4,7 +4,7 @@ import DynamicModal from './DynamicModal';
 // import ClockIcon from '../icons/clock.svg';
 // import MapIcon from '../icons/map.svg';
 // import PhoneIcon from '../icons/phone.svg';
-import { DOCTORSDEGREES } from '../lib/utils';
+import { DOCTORSDEGREES } from '../../lib/utils';
 // import NavigationIcon from '../icons/navigation.svg';
 
 function DoctorProfile(props) {
