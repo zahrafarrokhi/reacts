@@ -51,8 +51,10 @@ export default function DepartmentTabBar(props) {
           sx={{
             borderBottom: 1,
             borderColor: "divider",
-            margin: "0.5em",
-            padding: "1em",
+            [theme.breakpoints.down("md")]: {
+              margin: "0.5em",
+              padding: "1em",
+            },
           }}
         >
           <TabList
